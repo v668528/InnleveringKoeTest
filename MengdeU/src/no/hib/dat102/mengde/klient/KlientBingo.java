@@ -29,7 +29,7 @@ public class KlientBingo {
 			System.out.println("kule 1 funnet i mengde 1");
 		}
 
-		if (minMengde1.erLik(minMengde2)) {
+		if (minMengde1.equals(minMengde2)) {
 			System.out.println("Like mengder");
 		}
 		
