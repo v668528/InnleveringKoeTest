@@ -34,7 +34,7 @@ public class KlientBingo {
 		}
 		
 		minMengde1.fjern(kule1);
-		if (!minMengde1.erLik(minMengde2)) {
+		if (!minMengde1.equals(minMengde2)) {
 			System.out.println("Ulike mengder");
 		}
 

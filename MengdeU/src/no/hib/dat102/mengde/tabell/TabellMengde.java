@@ -148,7 +148,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	}
 
 	@Override
-	public boolean erLik(MengdeADT<T> m2) {
+	public boolean equals(MengdeADT<T> m2) {
 		boolean likeMengder = true;
 		T element;
 
