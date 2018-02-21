@@ -18,7 +18,6 @@ public class KlientPersonliste {
 			personerS[i] = personer[i];
 		}
 
-
 		// Utskrift av data
 		System.out.println("\n Originale data ");
 		for (int i = 0; i < personer.length; i++) {
@@ -35,15 +34,15 @@ public class KlientPersonliste {
 		funnet = SoekingOgSortering.linearSoekU(personer, 0, personer.length - 1, person1);
 
 		if (funnet) {
-			System.out.println(person1 + " er med");			
+			System.out.println(person1 + " er med");
 		} else {
-			System.out.println(person1 + " er ikke med");			
+			System.out.println(person1 + " er ikke med");
 		}
 
 		funnet = SoekingOgSortering.linearSoekU(personer, 0, personer.length - 1, person2);
 
 		if (funnet) {
-			System.out.println(person2 + " er med");			
+			System.out.println(person2 + " er med");
 		} else {
 			System.out.println(person2 + " er ikke med");
 		}
@@ -63,8 +62,8 @@ public class KlientPersonliste {
 		}
 
 		/*
-		 * Lineær søking i en sortert tabell * / 
-		 * Lineærsøking som returnerer sann eller usann
+		 * Lineær søking i en sortert tabell * / Lineærsøking som returnerer
+		 * sann eller usann
 		 */
 		System.out.println("\nUtskrift fra linearSokSortert som returnerer sann eller usann ");
 
@@ -73,66 +72,91 @@ public class KlientPersonliste {
 		if (funnet) {
 			System.out.println(person1 + " er med");
 		} else {
-			System.out.println(person1 + " er ikke med");			
+			System.out.println(person1 + " er ikke med");
 		}
 
 		funnet = SoekingOgSortering.linearSoekS(personerS, 0, personerS.length - 1, person2);
 
 		if (funnet) {
-			System.out.println(person2 + " er med");			
+			System.out.println(person2 + " er med");
 		} else {
-			System.out.println(person2 + " er ikke med");			
+			System.out.println(person2 + " er ikke med");
 		}
 
 		/* Binærsøking - tabellen er sortert */
 
-		/* Binærsøking som returnerer sann eller usann */
-		System.out.println("\nUtskrift fra rekursiv binaersoking som returnerer sann eller usann ");
+		/* Alt 1 Binærsøking som returnerer sann eller usann */
+		System.out.println("\n Alt 1 Utskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
 		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
 		} else {
-			System.out.println(person1 + " er ikke med");			
+			System.out.println(person1 + " er ikke med");
 		}
 
 		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person2);
-
 		if (funnet) {
-			System.out.println(person2 + " er med");			
-		} else {
-			System.out.println(person2 + " er ikke med");		
-		}
-
-		/* Rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */
-		System.out.println("\nUtskrift fra  rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
-
-		int ind = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person2);
-
-		if (ind > 1) {
-			System.out.println(personerS[ind] + " er med");			
+			System.out.println(person2 + " er med");
 		} else {
 			System.out.println(person2 + " er ikke med");
 		}
 
-		/*  
-		 * Ikke-rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn
-		 */
-		
-		/*
-		System.out.println("\nUtskrift fra rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
+		//
+		/* Alt 2 Binærsøking som returnerer sann eller usann */
+		System.out.println("\n Alt 2 :Utskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
-		ind = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person1);
+		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person1);
+
+		if (funnet) {
+			System.out.println(person1 + " er med");
+		} else {
+			System.out.println(person1 + " er ikke med");
+		}
+		funnet = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person2);
+		if (funnet) {
+			System.out.println(person2 + " er med");
+		} else {
+			System.out.println(person2 + " er ikke med");
+		}
+
+		// Alt 3
+		/* Rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */
+		System.out.println("\n Alt 3 Utskrift fra  rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
+
+		int ind = SoekingOgSortering.binaerSoek3(personerS, 0, personerS.length - 1, person1);
 
 		if (ind > 1) {
-			System.out.println(personerS[ind] + " er med");			
+			System.out.println(personerS[ind] + " er med");
 		} else {
-			System.out.print(person1 + " er ikke med");			
+			System.out.println(person2 + " er ikke med");
 		}
-		
-		*/
-		
+
+		ind = SoekingOgSortering.binaerSoek3(personerS, 0, personerS.length - 1, person2);
+
+		if (ind > 1) {
+			System.out.println(personerS[ind] + " er med");
+		} else {
+			System.out.println(person2 + " er ikke med");
+		}
+
+		/*
+		 * Ikke-rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn
+		 */
+
+		/*
+		 * System.out.
+		 * println("\nUtskrift fra rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn."
+		 * );
+		 * 
+		 * ind = SoekingOgSortering.binaerSoek4(personerS, 0, personerS.length -
+		 * 1, person1);
+		 * 
+		 * if (ind > 1) { System.out.println(personerS[ind] + " er med"); } else
+		 * { System.out.print(person1 + " er ikke med"); }
+		 * 
+		 */
 
 	}// main
 }// class
