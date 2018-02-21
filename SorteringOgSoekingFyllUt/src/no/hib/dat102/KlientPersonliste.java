@@ -107,14 +107,16 @@ public class KlientPersonliste {
 		/* Alt 2 Binærsøking som returnerer sann eller usann */
 		System.out.println("\n Alt 2 :Utskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person1);
+		funnet = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
 		} else {
 			System.out.println(person1 + " er ikke med");
 		}
+		
 		funnet = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person2);
+		
 		if (funnet) {
 			System.out.println(person2 + " er med");
 		} else {
