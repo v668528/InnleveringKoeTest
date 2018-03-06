@@ -96,7 +96,7 @@ public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 
 
 	private void utvid() {
-		T[] hjelpeTabell = (T[]) (new Object[liste.length * 2]);
+		T[] hjelpeTabell = (T[]) (new Comparable[liste.length * 2]);
 
 		for (int i = 0; i < liste.length; i++){
 			hjelpeTabell[i] = liste[i];
