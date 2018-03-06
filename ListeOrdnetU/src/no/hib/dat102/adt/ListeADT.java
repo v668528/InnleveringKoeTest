@@ -9,6 +9,7 @@ package no.hib.dat102.adt;
 public interface ListeADT<T> {
 	
 	
+	
 	/**
 	 * Fjerner og returnerer det spesifiserte elementet fra denne listen.
 	 *
