@@ -35,24 +35,24 @@ public class Parentesinfo{
   venstreparentes = ')';
  }
  
- public void settLinjenr(int nyttLinjenr){
+ public void setLinjenr(int nyttLinjenr){
   linjenr = nyttLinjenr;
  }
  
- public void settPosisjon(int nyPosisjon){
+ public void setPosisjon(int nyPosisjon){
   posisjon = nyPosisjon;
   
  }
  
- public void settVenstreparentes(char nyVenstreparentes){
+ public void setVenstreparentes(char nyVenstreparentes){
   venstreparentes = nyVenstreparentes;
  }
  
- public int hentLinjenr(){ return linjenr;}
+ public int getLinjenr(){ return linjenr;}
  
- public int hentPosisjon(){ return posisjon;}
+ public int getPosisjon(){ return posisjon;}
 
- public char hentVenstreparentes(){ return venstreparentes;}
+ public char getVenstreparentes(){ return venstreparentes;}
 
  
 }//class
