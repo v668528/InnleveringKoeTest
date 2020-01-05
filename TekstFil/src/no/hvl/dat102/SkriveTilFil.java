@@ -1,4 +1,4 @@
-package no.hib.dat102;
+package no.hvl.dat102;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;

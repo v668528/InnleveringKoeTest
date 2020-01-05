@@ -1,4 +1,4 @@
-package no.hib.dat102;
+package no.hvl.dat102;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.BufferedReader;
