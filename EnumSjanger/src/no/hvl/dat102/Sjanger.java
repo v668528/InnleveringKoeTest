@@ -1,7 +1,7 @@
 package no.hvl.dat102;
 
 public enum Sjanger {
-	ROCK(1), POP(2), OPERA(3), JAZZ(4), KLASSISK(5);
+	ACTION(0), DRAMA(1), HISTORY(2), SciFi(3);
 	private int nr;
 
 	private Sjanger(int n) { // Konstruktør

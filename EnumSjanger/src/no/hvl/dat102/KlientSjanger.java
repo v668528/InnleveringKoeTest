@@ -2,7 +2,7 @@ package no.hvl.dat102;
 
 import java.util.Scanner;
 
-public class SjangerKlient {
+public class KlientSjanger {
 
 	public static void main(String[] args) {
 
