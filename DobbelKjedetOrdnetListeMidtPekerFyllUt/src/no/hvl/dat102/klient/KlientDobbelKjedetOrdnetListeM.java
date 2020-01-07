@@ -7,7 +7,7 @@ public class KlientDobbelKjedetOrdnetListeM {
 	public static void main(String[] args) {
 
 		String ord[] = { "o", "a", "s", "m", "e", "k", "c" };
-//
+
 		DobbelKjedetOrdnetListeM<String> liste = new DobbelKjedetOrdnetListeM(new String("AAA"), new String("zzz"));
 
 		// Legger data inn i listen
