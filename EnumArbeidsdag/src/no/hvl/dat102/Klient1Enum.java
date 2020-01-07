@@ -1,6 +1,6 @@
 package no.hvl.dat102;
 
-public class EnumKlient1 {
+public class Klient1Enum {
 	
 
 	public static void main(String[] args) {

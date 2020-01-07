@@ -2,7 +2,7 @@ package no.hvl.dat102;
 
 import java.util.Scanner;
 
-public class EnumKlient2 {
+public class Klient2Enum {
 
 	public static void main(String[] args) {
 		
