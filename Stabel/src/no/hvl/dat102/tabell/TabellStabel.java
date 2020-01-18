@@ -1,6 +1,6 @@
-package no.hib.dat102.tabell;
-import no.hib.dat102.adt.StabelADT;
-import no.hib.dat102.exception.EmptyCollectionException;
+package no.hvl.dat102.tabell;
+import no.hvl.dat102.adt.StabelADT;
+import no.hvl.dat102.exception.EmptyCollectionException;
 
 //  Tabellimplementasjon av en stabel.
 //********************************************************************

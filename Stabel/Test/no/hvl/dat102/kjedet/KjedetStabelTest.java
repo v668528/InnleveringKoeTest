@@ -1,7 +1,8 @@
-package no.hib.dat102.kjedet;
+package no.hvl.dat102.kjedet;
 
-import no.hib.dat102.adt.StabelADT;
-import no.hib.dat102.adt.StabelADTTest;
+import no.hvl.dat102.adt.StabelADT;
+import no.hvl.dat102.adt.StabelADTTest;
+import no.hvl.dat102.kjedet.KjedetStabel;
 
 public class KjedetStabelTest extends StabelADTTest {
 	   @Override

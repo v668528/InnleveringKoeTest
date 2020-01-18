@@ -1,4 +1,4 @@
-package no.hib.dat102.kjedet;
+package no.hvl.dat102.kjedet;
 
 //************************************************************
 ///  Representerer en node.

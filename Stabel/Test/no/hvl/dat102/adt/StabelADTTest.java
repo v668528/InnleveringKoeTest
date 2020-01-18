@@ -1,4 +1,4 @@
-package no.hib.dat102.adt;
+package no.hvl.dat102.adt;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,8 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
-import no.hib.dat102.exception.EmptyCollectionException;
+import no.hvl.dat102.adt.StabelADT;
+import no.hvl.dat102.exception.EmptyCollectionException;
 
 /**
  * Test for StabelADT.

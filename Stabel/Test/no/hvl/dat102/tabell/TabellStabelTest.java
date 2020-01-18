@@ -1,6 +1,7 @@
-package no.hib.dat102.tabell;
-import no.hib.dat102.adt.StabelADT;
-import no.hib.dat102.adt.StabelADTTest;
+package no.hvl.dat102.tabell;
+import no.hvl.dat102.adt.StabelADT;
+import no.hvl.dat102.adt.StabelADTTest;
+import no.hvl.dat102.tabell.TabellStabel;
 
 public class TabellStabelTest extends StabelADTTest{	
 
