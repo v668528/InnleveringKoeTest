@@ -1,7 +1,7 @@
-package no.hib.dat102.klient;
-import no.hib.dat102.TabellStabel;
+package no.hvl.dat102.klient;
+import no.hvl.dat102.TabellStabel;
 
-public class StabelKlient {
+public class KlientStabel {
 	public static void main(String[] args){
 		
 		String str = "netsket re etteD";
