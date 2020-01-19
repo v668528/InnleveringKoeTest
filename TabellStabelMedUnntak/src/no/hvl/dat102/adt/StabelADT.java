@@ -19,7 +19,7 @@ public void push (T element);
  * Fjerner et element på toppen av stabelen og returnerer referansen
  * Kaster unntak EmptyCollectionException hvis stabelen allerede er tom.
  * @return T element fjernes fra toppen av stabelen
- * @exception EmptyCollectionException når stabelen er tom
+ * @exception EmptyCollectionException kastes hvis stabelen allerde er tom
  */
 public T pop();
 
@@ -28,7 +28,7 @@ public T pop();
  * Returnerer referansen til elementet på toppen av stabelen.
  * Elementet blir ikke fjernet.
   * @return T element på toppen av stabelen.
-  * @exception  EmptyCollectionException hvis stabelen allerede er tom.
+  * @exception  EmptyCollectionException kastes hvis stabelen allerede er tom.
  * 
  * 
  */
