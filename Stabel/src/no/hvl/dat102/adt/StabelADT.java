@@ -21,7 +21,7 @@ public void push (T element);
  * @return T element fjernes fra toppen av stabelen
  * @throws EmptyCollectionException når stabelen er tom
  */
-public T pop() throws EmptyCollectionException;
+public T pop();
 
  
 /**
@@ -31,7 +31,7 @@ public T pop() throws EmptyCollectionException;
  * @return T element på toppen av stabelen.
  * @throws EmptyCollectionException når stabelen er tom
  */
-public T peek() throws EmptyCollectionException;
+public T peek();
 
 
    
