@@ -1,4 +1,4 @@
-package no.hvl.dat102;
+package no.hvl.dat102.klient;
 
 import no.hvl.dat102.adt.StabelADT;
 import no.hvl.dat102.stabel.EmptyCollectionException;
