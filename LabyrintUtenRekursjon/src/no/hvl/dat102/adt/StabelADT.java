@@ -1,5 +1,5 @@
-package no.hib.dat102.adt;
-import no.hib.dat102.stabel.EmptyCollectionException;
+package no.hvl.dat102.adt;
+import no.hvl.dat102.stabel.EmptyCollectionException;
 
 public interface StabelADT<T> {
 
@@ -20,10 +20,10 @@ public interface StabelADT<T> {
 	 * unntak EmptyCollectionException hvis stabelen allerde er tom.
 	 * 
 	 * @return T element fjernes fra toppen av stabelen
-	 * @throws EmptyCollectionException
-	 *             når stabelen er tom
+	 * @exception kaster EmptyCollectionException
+	 *             når stabelen allerede er tom
 	 */
-	public T pop() throws EmptyCollectionException;
+	public T pop();
 
 	/**
 	 * Returenerer referansen til elementet på toppen av stabelen. Elementet
@@ -31,10 +31,10 @@ public interface StabelADT<T> {
 	 * allerede er tom.
 	 * 
 	 * @return T element på toppen av stabelen.
-	 * @throws EmptyCollectionException
+	 * @exception kaster EmptyCollectionException
 	 *             når stabelen er tom
 	 */
-	public T peek() throws EmptyCollectionException;
+	public T peek() ;
 
 	/**
 	 * Bestemmer om stabelen er full.
