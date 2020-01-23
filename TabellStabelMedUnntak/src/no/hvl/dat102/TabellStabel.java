@@ -91,9 +91,9 @@ public class TabellStabel<T> implements StabelADT<T> {
 	private void utvid() {
 		T[] hjelpeTabell = (T[]) (new Object[stabel.length * 2]);
 
-		for (int indeks = 0; indeks < stabel.length; indeks++)
+		for (int indeks = 0; indeks < stabel.length; indeks++) {
 			hjelpeTabell[indeks] = stabel[indeks];
-
+		}
 		stabel = hjelpeTabell;
 	}
 }

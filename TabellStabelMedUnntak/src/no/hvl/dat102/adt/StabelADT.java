@@ -10,7 +10,7 @@ public interface StabelADT<T> {
 */
   /**
    * Legger til et element på toppen av stabelen, utvider hvis behov
- * @param element generisk element som stables på
+ * @param element elementet som stables på
  */
 public void push (T element);
   
