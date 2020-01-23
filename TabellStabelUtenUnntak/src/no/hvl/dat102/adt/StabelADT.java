@@ -3,15 +3,17 @@ package no.hvl.dat102.adt;
  /* Definerer interface til en datastruktur stabel.
  */
 public interface StabelADT<T> {
-	/**
-	 * Legger på et element på toppen av stabelen.
-	 */
+	
+/**
+ * Legge på et lement
+ * @param element er elementet som stables på
+ */
 	public void push(T element);
 
 	/**
 	 * Fjerner og returnerer toppelementet fra stabelen.
 	 * 
-	 * @return elementet som avstables
+	 * @return elementet som stables av
 	 */
 	public T pop();
 

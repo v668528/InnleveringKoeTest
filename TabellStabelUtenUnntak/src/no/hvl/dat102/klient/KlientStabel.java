@@ -8,7 +8,7 @@ public class KlientStabel {
 		int lengde = str.length();
 		TabellStabel<Character>tegnStabel = new TabellStabel<Character>();
 		for(int i = 0; i < lengde; i++){
-			tegnStabel.push(new Character(str.charAt(i)));
+			tegnStabel.push((str.charAt(i)));
 		}
 		System.out.println(str);
 		while(!tegnStabel.erTom()){
