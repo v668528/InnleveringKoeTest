@@ -12,6 +12,7 @@ public class KlientStabel {
 		for (int i = 0; i < lengde; i++) {
 			tegnStabel.push((str.charAt(i)));
 		}
+		
 		System.out.println(str);
 		try {
 			while (!tegnStabel.erTom()) {
