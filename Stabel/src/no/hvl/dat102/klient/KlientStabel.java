@@ -23,6 +23,6 @@ public class KlientStabel {
 		} catch (EmptyCollectionException ex) {
 			System.out.println(ex.getMessage());
 		}
-	}
+	} 
 
 }// class

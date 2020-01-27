@@ -1,16 +1,14 @@
 package no.hvl.dat102.tabell;
+
 import no.hvl.dat102.adt.StabelADT;
 import no.hvl.dat102.adt.StabelADTTest;
 import no.hvl.dat102.tabell.TabellStabel;
 
-public class TabellStabelTest extends StabelADTTest{	
+public class TabellStabelTest extends StabelADTTest {
 
-		@Override
-		protected StabelADT<Integer> reset() {
-			return new TabellStabel<Integer>();
-		}
-		// Her kan en vel legge til test på at stabelen
-		// utvider seg
+	@Override
+	protected StabelADT<Integer> reset() {
+		return new TabellStabel<Integer>();
 	}
 
-
+}

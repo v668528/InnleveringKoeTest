@@ -1,14 +1,18 @@
 package no.hvl.dat102.adt;
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
-import no.hvl.dat102.adt.StabelADT;
 import no.hvl.dat102.exception.EmptyCollectionException;
+import no.hvl.dat102.adt.StabelADT;
 
 /**
  * Test for StabelADT.
@@ -28,12 +32,14 @@ public abstract class StabelADTTest {
 	private Integer e4 = 5;
 
 	protected abstract StabelADT<Integer> reset();
+
 	/**
 	 * Hent en ny stabel for hver test.
-	 * @return 
+	 * 
+	 * @return
 	 */
-	@Before
-	public final void setup() {
+	@BeforeEach
+	public void setup() {
 		stabel = reset();
 	}
 
@@ -41,7 +47,7 @@ public abstract class StabelADTTest {
 	 * Test på at en ny stabel er tom.
 	 */
 	@Test
-	public final void nyStabelErTom() {
+	public void nyStabelErTom() {
 		assertTrue(stabel.erTom());
 	}
 
@@ -49,7 +55,7 @@ public abstract class StabelADTTest {
 	 * Test opå push and pop.
 	 */
 	@Test
-	public final void pushOgPop() {
+	public void pushOgPop() {
 
 		stabel.push(e0);
 		stabel.push(e1);
@@ -70,7 +76,7 @@ public abstract class StabelADTTest {
 	 * Test på push og pop med duplikate verdier.
 	 */
 	@Test
-	public final void pushOgPopMedDuplikater() {
+	public void pushOgPopMedDuplikater() {
 
 		stabel.push(e0);
 		stabel.push(e1);
@@ -91,7 +97,7 @@ public abstract class StabelADTTest {
 	 * Testing på peek.
 	 */
 	@Test
-	public final void pushPopPushPushPopPeek() {
+	public void pushPopPushPushPopPeek() {
 		try {
 			stabel.push(e2);
 			stabel.pop();
@@ -119,7 +125,7 @@ public abstract class StabelADTTest {
 	 * Test på at en stabel med null elementer er tom.
 	 */
 	@Test
-	public final void pushPopErTom() {
+	public void pushPopErTom() {
 		try {
 			stabel.push(e0);
 			stabel.pop();
@@ -134,7 +140,7 @@ public abstract class StabelADTTest {
 	 * Test på størrelsen
 	 */
 	@Test
-	public final void stor() {
+	public void stor() {
 		stabel.push(e0);
 		stabel.push(e1);
 		stabel.push(e2);
@@ -144,13 +150,18 @@ public abstract class StabelADTTest {
 	/**
 	 * Forsøk på pop av en tom stabel skal gi "underflow excepton" *
 	 * 
-	 * @throws EmptyCollectionException
-	 *             expected exception
+	 * @throws EmptyCollectionException expected exception
 	 */
-	@Test(expected = EmptyCollectionException.class)
-	public final void popFromEmptyIsUnderflowed()
-			throws EmptyCollectionException {
-		stabel.pop();
-	}
+	@Test
+	public void popFromEmptyIsUnderflowed() {
+		/*
+		 * Assertions.assertThrows(EmptyCollectionException.class, new Executable() {
+		 * 
+		 * @Override public void execute() throws Throwable { stabel.pop(); } });
+		 */
 
+		Assertions.assertThrows(EmptyCollectionException.class, () -> {
+			stabel.pop();
+		});
+	}
 }
