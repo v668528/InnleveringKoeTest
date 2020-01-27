@@ -7,7 +7,7 @@ import org.junit.Test;
 import no.hvl.dat102.Kalkulator;
 
 public class TestKalkulator {
-	
+	//testmetoder
 
 	@Test
 	public void testAdd() {
