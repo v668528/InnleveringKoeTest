@@ -1,9 +1,14 @@
 package no.hvl.dat102;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import no.hvl.dat102.EmptyCollectionException;
 import no.hvl.dat102.TabellStabel;
@@ -35,8 +40,8 @@ public class StabelADTTest {
 	/**
 	 * Get a new stabel for each test.
 	 */
-	@Before
-	public final void setup() {
+	@BeforeEach
+	public void setup() {
 		stabel = new TabellStabel<Integer>(SIZE);
 	}
 
@@ -44,7 +49,7 @@ public class StabelADTTest {
 	 * Test that a new stabel is empty.
 	 */
 	@Test
-	public final void newStackIsEmpty() {
+	public void newStackIsEmpty() {
 		assertTrue(stabel.erTom());
 	}
 
@@ -52,7 +57,7 @@ public class StabelADTTest {
 	 * Test on push and pop.
 	 */
 	@Test
-	public final void pushAndPop() {
+	public void pushAndPop() {
 
 		stabel.push(e0);
 		stabel.push(e1);
@@ -73,7 +78,7 @@ public class StabelADTTest {
 	 * Test on push and pop with duplicated values.
 	 */
 	@Test
-	public final void pushAndPopWithDuplicates() {
+	public void pushAndPopWithDuplicates() {
 
 		stabel.push(e0);
 		stabel.push(e1);
@@ -94,7 +99,7 @@ public class StabelADTTest {
 	 * Testing top.
 	 */
 	@Test
-	public final void pushPopPushPushPopPeek() {
+	public void pushPopPushPushPopPeek() {
 		try {
 			stabel.push(e2);
 			stabel.pop();
@@ -112,7 +117,7 @@ public class StabelADTTest {
 	 * Test that a stabel with element(s) is not empty.
 	 */
 	@Test
-	public final void isNotEmpty() {
+	public void isNotEmpty() {
 		stabel.push(e0);
 		assertFalse(stabel.erTom());
 	}
@@ -122,7 +127,7 @@ public class StabelADTTest {
 	 * stabel.
 	 */
 	@Test
-	public final void pushPopIsEmpty() {
+	public void pushPopIsEmpty() {
 		try {
 			stabel.push(e0);
 			stabel.pop();
@@ -137,12 +142,20 @@ public class StabelADTTest {
 	 * Trying to pop an element from an empty stabel, should give an underflow
 	 * exception.
 	 * 
-	 * @throws EmptyCollectionException
-	 *             expected exception
 	 */
-	@Test(expected = EmptyCollectionException.class)
-	public final void popFromEmptyIsUnderflowed() throws EmptyCollectionException {
-		stabel.pop();
+	@Test
+	public void popFromEmptyIsUnderflowed() {
+		Assertions.assertThrows(EmptyCollectionException.class, new Executable() {
+			
+			@Override
+			public void execute() throws Throwable {
+				stabel.pop();
+			}
+		});
+		Assertions.assertThrows(EmptyCollectionException.class, () -> {
+				stabel.pop();
+			}
+		);
 	}
 	
 	/**
@@ -154,7 +167,7 @@ public class StabelADTTest {
      */
 	
     @Test
-    public final void utviderKoeSeg() {
+    public void utviderKoeSeg() {
         stabel.push(e1);
         for (int i = 0; i < SIZE; i++) {
             stabel.push(e0);
