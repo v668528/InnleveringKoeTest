@@ -145,6 +145,7 @@ public class StabelADTTest {
 	 */
 	@Test
 	public void popFromEmptyIsUnderflowed() {
+		/*
 		Assertions.assertThrows(EmptyCollectionException.class, new Executable() {
 			
 			@Override
@@ -152,6 +153,7 @@ public class StabelADTTest {
 				stabel.pop();
 			}
 		});
+		*/
 		Assertions.assertThrows(EmptyCollectionException.class, () -> {
 				stabel.pop();
 			}
