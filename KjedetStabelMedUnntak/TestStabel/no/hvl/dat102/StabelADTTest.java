@@ -1,10 +1,14 @@
 package no.hvl.dat102;
-import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
 
-import no.hvl.dat102.EmptyCollectionException;
-import no.hvl.dat102.KjedetStabel;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
 import no.hvl.dat102.adt.StabelADT;
 
 /**
@@ -27,7 +31,7 @@ public class StabelADTTest {
 	/**
 	 * Hent en ny stabel for hver test.
 	 */
-	@Before
+	@BeforeEach
 	public final void setup() {
 		stabel = new KjedetStabel<Integer>();
 	}
@@ -139,13 +143,12 @@ public class StabelADTTest {
 	/**
 	 * Forsøk på pop av en tom stabel skal gi "underflow excepton" *
 	 * 
-	 * @throws EmptyCollectionException
-	 *             expected exception
 	 */
-	@Test(expected = EmptyCollectionException.class)
-	public final void popFromEmptyIsUnderflowed()
-			throws EmptyCollectionException {
-		stabel.pop();
+	@Test
+	public final void popFromEmptyIsUnderflowed() {
+		Assertions.assertThrows(EmptyCollectionException.class, () -> {
+			stabel.pop();
+		});
 	}
 
 }
