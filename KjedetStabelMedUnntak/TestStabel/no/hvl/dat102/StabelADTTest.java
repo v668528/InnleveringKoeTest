@@ -41,7 +41,7 @@ public class StabelADTTest {
 	}
 
 	/**
-	 * Test opå push and pop.
+	 * Test på push and pop.
 	 */
 	@Test
 	public final void pushOgPop() {
