@@ -6,7 +6,7 @@ import no.hvl.dat102.adt.StabelADT;
 //********************************************************************
 
 public class TabellStabel<T> implements StabelADT<T> {
-	private final static int STDK = 100;
+	private final static int STDK = 10;
 	private int topp; // indikerer neste plass
 	private T[] stabel;
 
