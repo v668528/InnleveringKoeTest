@@ -6,16 +6,16 @@ import no.hvl.dat102.adt.StabelADT;
 //********************************************************************
 
 public class TabellStabel<T> implements StabelADT<T> {
-	private final static int STDK = 10;
+	private final static int STDK = 100;
 	private int topp; // indikerer neste plass
 	private T[] stabel;
 
 	/*******************************************************************
 	 * Oppretter en tom stabel.
 	 *******************************************************************/
-	
+
 	public TabellStabel() {
-		this(STDK);		
+		this(STDK);
 	}
 
 	/*******************************************************************
@@ -41,11 +41,11 @@ public class TabellStabel<T> implements StabelADT<T> {
 
 	/*******************************************************************
 	 * 
-	 * Fjerner toppelementet og returnerer en referanse til den. Hvis stabelen
-	 *  er tom fra før, kastes unntak
+	 * Fjerner toppelementet og returnerer en referanse til den. Hvis stabelen er
+	 * tom fra før, kastes unntak
 	 *******************************************************************/
 	@Override
-	public T pop()  {
+	public T pop() {
 		if (erTom())
 			throw new EmptyCollectionException("Stabel");
 
@@ -57,8 +57,8 @@ public class TabellStabel<T> implements StabelADT<T> {
 	}
 
 	/*******************************************************************
-	 * Returnerer toppelementet uten å fjerne det. Hvis stabelen er tom fra
-	 * før, kastes unntak
+	 * Returnerer toppelementet uten å fjerne det. Hvis stabelen er tom fra før,
+	 * kastes unntak
 	 *******************************************************************/
 	@Override
 	public T peek() {
@@ -84,7 +84,6 @@ public class TabellStabel<T> implements StabelADT<T> {
 		return topp;
 	}
 
-	
 	/*******************************************************************
 	 * Oppretter en ny tabell for å lagre innholdet.
 	 *******************************************************************/
@@ -95,5 +94,6 @@ public class TabellStabel<T> implements StabelADT<T> {
 			hjelpeTabell[indeks] = stabel[indeks];
 		}
 		stabel = hjelpeTabell;
+
 	}
 }
