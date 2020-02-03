@@ -1,10 +1,9 @@
-package no.hib.dat102.mengde.tabell;
-
-import no.hib.dat102.mengde.adt.*;
-
+package no.hvl.dat102.mengde.tabell;
 
 import java.util.Iterator;
 import java.util.Random;
+
+import no.hvl.dat102.mengde.adt.*;
 
 public class TabellMengde<T> implements MengdeADT<T> {
 	// ADT-en Mengde implementert som tabell
@@ -67,73 +66,13 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 	public T fjern(T element) {
 		// Søker etter og fjerner element.Retur med null ved ikke-funn
-		
+
 		boolean funnet = false;
 		T svar = null;
 		/*
 		 * Fyll ut
 		 */
 		return svar;
-	}
-/* Lite effektiv!
-	@Override
-	public MengdeADT<T> union(MengdeADT<T> m2) {
-		TabellMengde<T> begge = new TabellMengde<T>();
-		for (int i = 0; i < antall; i++) {
-			begge.leggTil(tab[i]);
-		}
-		Iterator<T> teller = m2.oppramser();
-
-		while (teller.hasNext()) {
-			begge.leggTil(teller.next());
-		}
-		return (MengdeADT<T>)begge;
-	}
-	*/
-	@Override
-	
-	public MengdeADT<T> union(MengdeADT<T> m2) {
-		MengdeADT<T> begge = new TabellMengde<T>();
-		T element = null;		
-		/*
-		 * Fyll ut
-		 * 	
-		 */	
-		return begge;
-	}//
-	
-	
-
-	@Override
-	public MengdeADT<T> snitt(MengdeADT<T> m2) {
-		MengdeADT<T> snittM = new TabellMengde<T>();
-		T element= null;
-		/*
-		 * Fyll ut
-		 */
-		return snittM;
-	}
-
-	@Override
-	public MengdeADT<T> differens(MengdeADT<T> m2) {
-		MengdeADT<T> differensM = new TabellMengde<T>();
-		T element;
-		/*
-		 * Fyll ut
-		 
-			if (!m2.inneholder(element))
-				 ((TabellMengde<T>) differensM).settInn(element);
-		*/
-		
-		return differensM;
-	}
-
-	private void settInn(T element) {
-		if (antall == tab.length) {
-			utvidKapasitet();
-		}
-		tab[antall] = element;
-		antall++;
 	}
 
 	@Override
@@ -164,12 +103,56 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		while (teller.hasNext())
 			leggTil(teller.next());
 	}
-	
+
+	/*
+	 * Denne versjonen av unionen er lite effekktiv
+	 * 
+	 * @Override public MengdeADT<T> union(MengdeADT<T> m2) { TabellMengde<T> begge
+	 * = new TabellMengde<T>(); for (int i = 0; i < antall; i++) {
+	 * begge.leggTil(tab[i]); } Iterator<T> teller = m2.oppramser();
+	 * 
+	 * while (teller.hasNext()) { begge.leggTil(teller.next()); } return
+	 * (MengdeADT<T>)begge; }
+	 */
+	@Override
+
+	public MengdeADT<T> union(MengdeADT<T> m2) {
+		MengdeADT<T> begge = new TabellMengde<T>();
+		T element = null;
+		/*
+		 * Fyll ut
+		 * 
+		 */
+		return begge;
+	}//
+
+	@Override
+	public MengdeADT<T> snitt(MengdeADT<T> m2) {
+		MengdeADT<T> snittM = new TabellMengde<T>();
+		T element = null;
+		/*
+		 * Fyll ut
+		 */
+		return snittM;
+	}
+
+	@Override
+	public MengdeADT<T> differens(MengdeADT<T> m2) {
+		MengdeADT<T> differensM = new TabellMengde<T>();
+		T element;
+		/*
+		 * Fyll ut
+		 * 
+		 * if (!m2.inneholder(element)) ((TabellMengde<T>) differensM).settInn(element);
+		 */
+
+		return differensM;
+	}
 
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
 		boolean erUnderMengde = true;
-		//Fyll ut
+		// Fyll ut
 		return false;
 	}
 
@@ -178,5 +161,12 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		return new TabellIterator<T>(tab, antall);
 	}
 
+	private void settInn(T element) {
+		if (antall == tab.length) {
+			utvidKapasitet();
+		}
+		tab[antall] = element;
+		antall++;
+	}
 
 }// class
