@@ -3,6 +3,7 @@ package no.hvl.dat102.mengde.tabell;
 import java.util.Iterator;
 import java.util.Random;
 
+import no.hvl.dat102.exception.EmptyCollectionException;
 import no.hvl.dat102.mengde.adt.*;
 
 public class TabellMengde<T> implements MengdeADT<T> {
@@ -54,21 +55,26 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 	public T fjernTilfeldig() {
 		T svar = null;
-		if (antall > 0) {
-			int indeks = tilf.nextInt(antall);
-			svar = tab[indeks];
-			tab[indeks] = tab[antall - 1];
-			antall--;
-		}
+		if (erTom())
+			throw new EmptyCollectionException("mengde");
+
+		int indeks = tilf.nextInt(antall);
+		svar = tab[indeks];
+		tab[indeks] = tab[antall - 1];
+		antall--;
+
 		return svar;
 	}
 
 	@Override
 	public T fjern(T element) {
-		// Søker etter og fjerner element.Retur med null ved ikke-funn
+		// Søker etter og fjerner element. Returnerer null-ref ved ikke-funn
 
 		boolean funnet = false;
 		T svar = null;
+		if (erTom())
+			throw new EmptyCollectionException("mengde");
+
 		/*
 		 * Fyll ut
 		 */

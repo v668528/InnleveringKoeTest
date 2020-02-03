@@ -5,6 +5,7 @@ package no.hvl.dat102.mengde.kjedet;
 //********************************************************************
 import java.util.*;
 
+import no.hvl.dat102.exception.EmptyCollectionException;
 import no.hvl.dat102.mengde.adt.*;
 
 public class KjedetMengde<T> implements MengdeADT<T> {
@@ -42,23 +43,27 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	public T fjernTilfeldig() {
 		LinearNode<T> forgjenger, aktuell;
 		T resultat = null;
-		if (!erTom()) {
-			int valg = rand.nextInt(antall) + 1;
-			if (valg == 1) {
-				resultat = start.getElement();
-				start = start.getNeste();
-			} else {
-				forgjenger = start;
-				for (int nr = 2; nr < valg; nr++) {
-					forgjenger = forgjenger.getNeste();
-				}
-				aktuell = forgjenger.getNeste();
-				resultat = aktuell.getElement();
-				forgjenger.setNeste(aktuell.getNeste());
+
+		if (erTom())
+			throw new EmptyCollectionException("mengde");
+
+		int valg = rand.nextInt(antall) + 1;
+		if (valg == 1) {
+			resultat = start.getElement();
+			start = start.getNeste();
+		} else {
+			forgjenger = start;
+			for (int nr = 2; nr < valg; nr++) {
+				forgjenger = forgjenger.getNeste();
 			}
-			antall--;
-		} // if
+			aktuell = forgjenger.getNeste();
+			resultat = aktuell.getElement();
+			forgjenger.setNeste(aktuell.getNeste());
+		}
+		antall--;
+
 		return resultat;
+
 	}//
 
 	@Override
@@ -66,50 +71,12 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		boolean funnet = false;
 		LinearNode<T> forgjenger, aktuell;
 		T resultat = null;
-		/* Fyll ut
+		/*
+		 * Fyll ut
 		 * 
 		 */
 		return resultat;
 	}//
-
-	
-
-	@Override
-	public MengdeADT<T> union(MengdeADT<T> m2) {
-		MengdeADT<T> begge = new KjedetMengde<T>();
-		LinearNode<T> aktuell = start;
-		T element = null;
-
-		/*
-		 * Fyll ut
-		 */
-		return begge;
-	}//
-
-	@Override
-	public MengdeADT<T> snitt(MengdeADT<T> m2) {
-		MengdeADT<T> snittM = new KjedetMengde<T>();
-		T element;
-		/* Fyll ut...
-		 * 
-			if (this.inneholder(element))		 
-				((KjedetMengde<T>) snittM).settInn(element);
-		*/
-		return snittM;
-	}
-
-	
-
-	@Override
-	public MengdeADT<T> differens(MengdeADT<T> m2) {
-		MengdeADT<T> differensM = new KjedetMengde<T>();
-		T element;
-		/*Fyll ut
-		 * 
-		 */
-		
-		return differensM;
-	}
 
 	@Override
 	public boolean inneholder(T element) {
@@ -129,7 +96,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	public boolean equals(MengdeADT<T> m2) {
 		boolean likeMengder = true;
 		T element = null;
-		//Fyll ut
+		// ...Fyll ut
 		return likeMengder;
 	}
 
@@ -144,17 +111,53 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	}
 
 	@Override
-	public Iterator<T> oppramser() {
-		return new KjedetIterator<T>(start);
+	public MengdeADT<T> union(MengdeADT<T> m2) {
+		MengdeADT<T> begge = new KjedetMengde<T>();
+		LinearNode<T> aktuell = start;
+		T element = null;
+
+		/*
+		 * Fyll ut
+		 */
+		return begge;
+	}//
+
+	@Override
+	public MengdeADT<T> snitt(MengdeADT<T> m2) {
+		MengdeADT<T> snittM = new KjedetMengde<T>();
+		T element;
+		/*
+		 * Fyll ut...
+		 * 
+		 * if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
+		 */
+		return snittM;
 	}
-	
+
+	@Override
+	public MengdeADT<T> differens(MengdeADT<T> m2) {
+		MengdeADT<T> differensM = new KjedetMengde<T>();
+		T element;
+		/*
+		 * Fyll ut
+		 * 
+		 */
+
+		return differensM;
+	}
+
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
 		boolean erUnderMengde = true;
-		//Fyll ut
+		// Fyll ut
 		return erUnderMengde;
 	}
-	
+
+	@Override
+	public Iterator<T> oppramser() {
+		return new KjedetIterator<T>(start);
+	}
+
 	private void settInn(T element) {
 		LinearNode<T> nyNode = new LinearNode<T>(element);
 		nyNode.setNeste(start);
