@@ -69,12 +69,12 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 	public T fjern(T element) {
 		// Søker etter og fjerner element. Returnerer null-ref ved ikke-funn
-
-		boolean funnet = false;
-		T svar = null;
+	
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
-
+		
+		boolean funnet = false;
+		T svar = null;
 		/*
 		 * Fyll ut
 		 */

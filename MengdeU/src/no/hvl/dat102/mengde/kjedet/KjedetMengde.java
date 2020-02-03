@@ -68,6 +68,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjern(T element) {
+		
+		if (erTom())
+			throw new EmptyCollectionException("mengde");
+		
 		boolean funnet = false;
 		LinearNode<T> forgjenger, aktuell;
 		T resultat = null;
