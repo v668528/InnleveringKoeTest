@@ -1,9 +1,11 @@
-package no.hib.dat102.kjedet;
-import no.hib.dat102.adt.*;
+package no.hvl.dat102.kjedet;
+
+import no.hvl.dat102.EmptyCollectionException;
+import no.hvl.dat102.adt.*;
+
 /**
  * 
- * @param <T>
- *            elementtypen
+ * @param <T> elementypen
  */
 public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeADT<T> {
 	private int antall;
@@ -20,34 +22,42 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 
 	@Override
 	public T fjernFoerste() {
-		T svar = null;
-		//...Fyll ut
-		return svar;
+		if (erTom())
+			throw new EmptyCollectionException("ordnet liste");
+
+		T resultat = null;
+		// ...Fyll ut
+		return resultat;
 	}
 
 	@Override
 	public T fjernSiste() {
-		T svar = null;
-		//...Fyll ut
-		return svar;
+		if (erTom())
+			throw new EmptyCollectionException("ordnet liste");
+
+		T resultat = null;
+		// ...Fyll ut
+		return resultat;
 	}
 
 	@Override
 	public T foerste() {
-		T svar = null;
-		if (!erTom()) {
-			svar = foerste.getElement();
-		}
+		if (erTom())
+			throw new EmptyCollectionException("ordnet liste");
+
+		T svar = foerste.getElement();
+
 		return svar;
 	}
 
 	@Override
 	public T siste() {
-		T svar = null;
-		if (!erTom()) {
-			svar = siste.getElement();
-		}
-		return svar;
+		if (erTom())
+			throw new EmptyCollectionException("ordnet liste");
+
+		T resultat = siste.getElement();
+
+		return resultat;
 	}
 
 	@Override
@@ -63,9 +73,8 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 	@Override
 	public void leggTil(T element) {
 
-		//...Fyll ut
+		// ...Fyll ut
 	}
-
 
 	@Override
 	public T fjern(T element) {
@@ -78,7 +87,7 @@ public class KjedetOrdnetListe<T extends Comparable<T>> implements OrdnetListeAD
 		if (denne != null && element.equals(denne.getElement())) { // funnet
 			antall--;
 			svar = denne.getElement();
-			if (forrige == null) {     // Første element
+			if (forrige == null) { // Første element
 				foerste = foerste.getNeste();
 				if (foerste == null) { // Tom liste
 					siste = null;
