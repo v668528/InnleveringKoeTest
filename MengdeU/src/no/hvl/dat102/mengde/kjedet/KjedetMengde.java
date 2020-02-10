@@ -41,11 +41,11 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjernTilfeldig() {
-		LinearNode<T> forgjenger, aktuell;
-		T resultat = null;
-
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
+
+		LinearNode<T> forgjenger, aktuell;
+		T resultat = null;
 
 		int valg = rand.nextInt(antall) + 1;
 		if (valg == 1) {
@@ -68,10 +68,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjern(T element) {
-		
+
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
-		
+
 		boolean funnet = false;
 		LinearNode<T> forgjenger, aktuell;
 		T resultat = null;

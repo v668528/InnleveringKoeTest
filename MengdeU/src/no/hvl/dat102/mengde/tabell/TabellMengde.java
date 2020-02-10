@@ -54,10 +54,10 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjernTilfeldig() {
-		T svar = null;
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
 
+		T svar = null;
 		int indeks = tilf.nextInt(antall);
 		svar = tab[indeks];
 		tab[indeks] = tab[antall - 1];
@@ -69,10 +69,10 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 	public T fjern(T element) {
 		// Søker etter og fjerner element. Returnerer null-ref ved ikke-funn
-	
+
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
-		
+
 		boolean funnet = false;
 		T svar = null;
 		/*
