@@ -2,6 +2,7 @@ package no.hvl.dat102.listeklient;
 
 import java.util.Scanner;
 
+import no.hvl.dat102.adt.OrdnetListeADT;
 import no.hvl.dat102.kjedet.KjedetOrdnetListe;
 
 public final class KlientOrdnetListe {
@@ -19,14 +20,10 @@ public final class KlientOrdnetListe {
 	 *            ikke i bruk
 	 */
 	public static void main(String[] args) {
-		/*
-		 * TabellOrdnetListe<String> navneListe1 = new
-		 * TabellOrdnetListe<String>(); TabellOrdnetListe<String> navneListe2 =
-		 * new TabellOrdnetListe<String>();
-		 */
+		
 
-		KjedetOrdnetListe<String> navneListe1 = new KjedetOrdnetListe<String>();
-		KjedetOrdnetListe<String> navneListe2 = new KjedetOrdnetListe<String>();
+		 OrdnetListeADT<String> navneListe1 = new KjedetOrdnetListe<String>();
+		 OrdnetListeADT<String> navneListe2 = new KjedetOrdnetListe<String>();
 
 		Scanner in = new Scanner(System.in);
 		String navn, svar;
