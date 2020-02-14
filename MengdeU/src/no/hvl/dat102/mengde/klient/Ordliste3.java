@@ -1,7 +1,7 @@
 package no.hvl.dat102.mengde.klient;
 
-import no.hvl.dat102.adt.MengdeADT;
-import no.hvl.dat102.kjedet.KjedetMengde;
+import no.hvl.dat102.mengde.adt.MengdeADT;
+import no.hvl.dat102.mengde.kjedet.KjedetMengde;
 
 public class Ordliste3 {
 
