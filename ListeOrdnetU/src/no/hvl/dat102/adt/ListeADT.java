@@ -12,7 +12,7 @@ public interface ListeADT<T> {
 	 * Fjerner og returnerer det spesifiserte elementet fra denne listen hvis det
 	 * fins.
 	 *
-	 * @exception EmptyCollectionException unntal kastes hvis liste allerede er tom
+	 * @exception EmptyCollectionException unntak kastes hvis listen allerede er tom
 	 * @return elementet som er fjernet
 	 */
 	T fjern(T element);
