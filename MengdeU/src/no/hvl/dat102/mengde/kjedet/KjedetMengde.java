@@ -97,7 +97,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	}
 
 	@Override
-	public boolean equals(MengdeADT<T> m2) {
+	public boolean equals(Object m2) {
 		boolean likeMengder = true;
 		T element = null;
 		// ...Fyll ut
