@@ -1,5 +1,6 @@
 package no.hvl.dat102.mengde.klient;
 
+import no.hvl.dat102.mengde.adt.MengdeADT;
 import no.hvl.dat102.mengde.kjedet.KjedetMengde;
 
 public class KlientBingo {
@@ -9,8 +10,8 @@ public class KlientBingo {
 
 	public static void main(String[] a) {
 		final int ANTALL_BALLER = 75;
-		KjedetMengde<Bingokule> mengde1 = new KjedetMengde<Bingokule>();
-		KjedetMengde<Bingokule> mengde2 = new KjedetMengde<Bingokule>();
+		MengdeADT<Bingokule> mengde1 = new KjedetMengde<Bingokule>();
+		MengdeADT<Bingokule> mengde2 = new KjedetMengde<Bingokule>();
 		Bingokule kule1 = null;
 		Bingokule kule2 = null;
 
