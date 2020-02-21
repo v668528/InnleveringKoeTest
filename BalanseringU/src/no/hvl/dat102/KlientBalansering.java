@@ -1,4 +1,4 @@
-package no.hib.dat102;
+package no.hvl.dat102;
 public class KlientBalansering{
      public static void main(String[] args){
         final String filnavn = "data.txt";
