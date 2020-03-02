@@ -22,9 +22,11 @@ public class Balansering {
 	}//
 
 	public void foretaBalansering(String innDataStreng, int linjenr) {
-
+        
 		int lengde = innDataStreng.length();
-		// Fyll ut
+		// Fyll ut...
+		
+		// Feimelding 1 og feilmelding 2 
 
 	}//
 
@@ -47,6 +49,11 @@ public class Balansering {
 				// Fyll ut
 
 			} // while
+			
+			//... Fyll ut
+			//... // Test på om stabel er tom når det er slutt på teksten,
+			// dvs. dersom vi mangler ett eller flere lukkesymboler
+			// Feilmelding 3
 		}
 
 		catch (IOException unntak) {
