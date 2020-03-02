@@ -114,6 +114,13 @@ public class KlientPersonliste {
 		} else {
 			System.out.println(person1 + " er ikke med");
 		}
+		
+		funnet = SorteringOgSoeking.binaerSoek(personerS, 0, personerS.length - 1, person2);
+		if (funnet) {
+			System.out.println(person2 + " er med");
+		} else {
+			System.out.println(person2 + " er ikke med");
+		}
 				
 
 		// Alt 3

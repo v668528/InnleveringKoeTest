@@ -9,14 +9,10 @@ public class SorteringOgSoeking {
 	/**
 	 * Metoden gjør et lineært søk i en tabell av usorterte data
 	 * 
-	 * @param data
-	 *            er data som skal søkes i
-	 * @param min
-	 *            er startindeks
-	 * @param maks
-	 *            er sluttindeks
-	 * @param el
-	 *            er verdien vi søker etter
+	 * @param data er data som skal søkes i
+	 * @param min  er startindeks
+	 * @param maks er sluttindeks
+	 * @param el   er verdien vi søker etter
 	 * @return sann om elementet ble funnet ellers usann
 	 */
 	public static <T extends Comparable<T>> boolean linearSoekU(T[] data, int min, int maks, T el) {
@@ -34,14 +30,10 @@ public class SorteringOgSoeking {
 	/**
 	 * Metoden gjør et lineært søk i en sortert tabell av data
 	 * 
-	 * @param data
-	 *            er data som skal søkes i
-	 * @param min
-	 *            er startindeks
-	 * @param maks
-	 *            er sluttindeks
-	 * @param el
-	 *            verdien vi søker etter
+	 * @param data er data som skal søkes i
+	 * @param min  er startindeks
+	 * @param maks er sluttindeks
+	 * @param el   verdien vi søker etter
 	 * @return sann hvis funnet ellers usann
 	 */
 	public static <T extends Comparable<T>> boolean linearSoekS(T[] data, int min, int maks, T el) {
@@ -63,33 +55,31 @@ public class SorteringOgSoeking {
 	/**
 	 * Metoden gjør et binært søk i en *sortert* tabell av data
 	 * 
-	 * @param data
-	 *            er data som skal søkes i
-	 * @param min
-	 *            er startindeks
-	 * @param maks
-	 *            er sluttindeks
-	 * @param el
-	 *            er elementet vi søker etter
+	 * @param data er data som skal søkes i
+	 * @param min  er startindeks
+	 * @param maks er sluttindeks
+	 * @param el   er elementet vi søker etter
 	 * @return sann om elementet ble funnet ellers usann.
 	 */
 
 	// Alt 1
-	public static <T extends Comparable<T>> boolean binaerSoek(T[] data, int min, int maks, T element) {
-
-		boolean funnet = false;
-		int midtpunkt = (min + maks) / 2;
-		if (data[midtpunkt].compareTo(element) == 0) {
-			funnet = true;
-		} else if (data[midtpunkt].compareTo(element) > 0) {
-			if (min <= midtpunkt - 1) {
-				funnet = binaerSoek(data, min, midtpunkt - 1, element);
-			}
-		} else if (midtpunkt + 1 <= maks) {
-			funnet = binaerSoek(data, midtpunkt + 1, maks, element);
+	public static <T extends Comparable<T>> boolean binaerSoek(T[] data, int min, int maks, T el) {
+		if (min > maks) { // basistilfelle, ingen element
+			return false;
 		}
-		return funnet;
-	}// metode
+
+		int midtpunkt = (min + maks) / 2;
+		int resultat = el.compareTo(data[midtpunkt]);
+
+		if (resultat == 0) { // basistilfelle, finner elementet
+			return true;
+		}
+		if (resultat < 0) {// (her vil også fungere med else if)
+			return binaerSoek(data, min, midtpunkt - 1, el);
+		} else { // resultat > 0
+			return binaerSoek(data, midtpunkt + 1, maks, el);
+		}
+	}//
 
 	// Alt 2
 	public static <T extends Comparable<T>> boolean binaerSoek2(T[] data, int min, int maks, T el) {
@@ -99,7 +89,7 @@ public class SorteringOgSoeking {
 
 		if (min > maks) { // basistilfelle, ingen element
 			funnet = false;
-		} else if (resultat == 0) {
+		} else if (resultat == 0) { // basistilfelle, funnet
 			funnet = true;
 		} else if (resultat < 0) {
 			funnet = binaerSoek2(data, min, midtpunkt - 1, el);
@@ -146,8 +136,7 @@ public class SorteringOgSoeking {
 	/**
 	 * Utvalgsortering
 	 * 
-	 * @param data
-	 *            er data som skal sorteres
+	 * @param data er data som skal sorteres
 	 */
 	public static <T extends Comparable<T>> void utvalgSortering(T[] data) {
 		int minste;
@@ -170,13 +159,12 @@ public class SorteringOgSoeking {
 	/**
 	 * Sortering ved innsetting
 	 * 
-	 * @param data
-	 *            er data som skal sorteres
+	 * @param data er data som skal sorteres
 	 */
 	// ...
 	/**
 	 * 
-	 * @param <T> generisk type
+	 * @param <T>  generisk type
 	 * @param data er tabellen som skal sorteres
 	 */
 	public static <T extends Comparable<T>> void bobleSort(T[] data) {
@@ -193,13 +181,13 @@ public class SorteringOgSoeking {
 		} // ytre løkke
 
 	}// metode
-	
+
 	public static <T extends Comparable<T>> void bobleSortFlagg(T[] data) {
 		/*
 		 * Sjekker om det ha vært ombytinger i nåværende gjennomløp. Dersom ingen
-		 *  ombyttinger avbrytes søket
+		 * ombyttinger avbrytes søket
 		 */
-		//TODO
+		// TODO
 	}// metode
 
 }

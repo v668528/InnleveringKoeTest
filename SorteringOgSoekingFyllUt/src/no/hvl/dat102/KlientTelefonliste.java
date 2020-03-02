@@ -57,7 +57,7 @@ public class KlientTelefonliste {
 		/* Lineær søking i usortert tabell , venner */
 		/* Lineærsøking som returnerer sann eller usann */
 		Kontakt kontakt1 = venner[2];
-		Kontakt kontakt2 = new Kontakt("Ole", "Olsen", " 55555555");
+		Kontakt kontakt2 = new Kontakt("Ole", "Olsen", "55555555");
 		boolean funnet = false;
 
 		System.out.println("\nUtskrift fra  linearSok som returnerer sann eller usann ");
