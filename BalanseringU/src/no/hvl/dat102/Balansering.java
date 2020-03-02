@@ -51,7 +51,8 @@ public class Balansering {
 			} // while
 			
 			//... Fyll ut
-			//... // Test på om stabel er tom når det er slutt på teksten,
+			//... Test på om om det er flere elementer igjen på stablen
+			// ... tømme stabelen
 			// dvs. dersom vi mangler ett eller flere lukkesymboler
 			// Feilmelding 3
 		}
