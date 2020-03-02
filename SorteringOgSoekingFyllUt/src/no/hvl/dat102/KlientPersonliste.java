@@ -31,7 +31,7 @@ public class KlientPersonliste {
 
 		System.out.println("\nUtskrift fra  linearSok som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.linearSoekU(personer, 0, personer.length - 1, person1);
+		funnet = SorteringOgSoeking.linearSoekU(personer, 0, personer.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
@@ -39,7 +39,7 @@ public class KlientPersonliste {
 			System.out.println(person1 + " er ikke med");
 		}
 
-		funnet = SoekingOgSortering.linearSoekU(personer, 0, personer.length - 1, person2);
+		funnet = SorteringOgSoeking.linearSoekU(personer, 0, personer.length - 1, person2);
 
 		if (funnet) {
 			System.out.println(person2 + " er med");
@@ -53,7 +53,7 @@ public class KlientPersonliste {
 		// OBS! Lager først en tabell av sorterte data før vi bruker
 		// linearsøking i sortert tabell og binærsøking.
 		/* Sorterer tabellen */
-		SoekingOgSortering.utvalgSortering(personerS);
+		SorteringOgSoeking.utvalgSortering(personerS);
 
 		// Utskrift av data
 		System.out.println("\n Sorterte  data ");
@@ -67,7 +67,7 @@ public class KlientPersonliste {
 		 */
 		System.out.println("\nUtskrift fra linearSokSortert som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.linearSoekS(personerS, 0, personerS.length - 1, person1);
+		funnet = SorteringOgSoeking.linearSoekS(personerS, 0, personerS.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
@@ -75,7 +75,7 @@ public class KlientPersonliste {
 			System.out.println(person1 + " er ikke med");
 		}
 
-		funnet = SoekingOgSortering.linearSoekS(personerS, 0, personerS.length - 1, person2);
+		funnet = SorteringOgSoeking.linearSoekS(personerS, 0, personerS.length - 1, person2);
 
 		if (funnet) {
 			System.out.println(person2 + " er med");
@@ -88,7 +88,7 @@ public class KlientPersonliste {
 		/* Alt 1 Binærsøking som returnerer sann eller usann */
 		System.out.println("\n Alt 1 Utskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person1);
+		funnet = SorteringOgSoeking.binaerSoek(personerS, 0, personerS.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
@@ -96,7 +96,7 @@ public class KlientPersonliste {
 			System.out.println(person1 + " er ikke med");
 		}
 
-		funnet = SoekingOgSortering.binaerSoek(personerS, 0, personerS.length - 1, person2);
+		funnet = SorteringOgSoeking.binaerSoek(personerS, 0, personerS.length - 1, person2);
 		if (funnet) {
 			System.out.println(person2 + " er med");
 		} else {
@@ -107,7 +107,7 @@ public class KlientPersonliste {
 		/* Alt 2 Binærsøking som returnerer sann eller usann */
 		System.out.println("\n Alt 2 :Utskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person1);
+		funnet = SorteringOgSoeking.binaerSoek2(personerS, 0, personerS.length - 1, person1);
 
 		if (funnet) {
 			System.out.println(person1 + " er med");
@@ -120,7 +120,7 @@ public class KlientPersonliste {
 		/* Rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */
 		System.out.println("\n Alt 3 Utskrift fra  rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
 
-		int ind = SoekingOgSortering.binaerSoek3(personerS, 0, personerS.length - 1, person1);
+		int ind = SorteringOgSoeking.binaerSoek3(personerS, 0, personerS.length - 1, person1);
 
 		if (ind > 1) {
 			System.out.println(personerS[ind] + " er med");
@@ -128,7 +128,7 @@ public class KlientPersonliste {
 			System.out.println(person2 + " er ikke med");
 		}
 
-		ind = SoekingOgSortering.binaerSoek3(personerS, 0, personerS.length - 1, person2);
+		ind = SorteringOgSoeking.binaerSoek3(personerS, 0, personerS.length - 1, person2);
 
 		if (ind > 1) {
 			System.out.println(personerS[ind] + " er med");
@@ -136,7 +136,7 @@ public class KlientPersonliste {
 			System.out.println(person2 + " er ikke med");
 		}
 
-		/*
+		/* TODO
 		 * Ikke-rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn
 		 */
 

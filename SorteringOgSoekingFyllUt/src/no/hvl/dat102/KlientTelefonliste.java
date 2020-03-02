@@ -50,7 +50,7 @@ public class KlientTelefonliste {
 		}
 
 		// Utskrift av data
-		System.out.println("\n originale data ");
+		System.out.println("\n Originale data ");
 		for (int i = 0; i < venner.length; i++) {
 			System.out.println(venner[i]);
 		}
@@ -62,7 +62,7 @@ public class KlientTelefonliste {
 
 		System.out.println("\nUtskrift fra  linearSok som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.linearSoekS(venner, 0, venner.length - 1, kontakt1);
+		funnet = SorteringOgSoeking.linearSoekS(venner, 0, venner.length - 1, kontakt1);
 
 		if (funnet) {
 			System.out.print(kontakt1);
@@ -72,7 +72,7 @@ public class KlientTelefonliste {
 			System.out.println(" er ikke med");
 		}
 
-		funnet = SoekingOgSortering.linearSoekS(venner, 0, venner.length - 1, kontakt2);
+		funnet = SorteringOgSoeking.linearSoekS(venner, 0, venner.length - 1, kontakt2);
 
 		if (funnet) {
 			System.out.print(kontakt2);
@@ -88,10 +88,10 @@ public class KlientTelefonliste {
 		// OBS! Lager først en tabell av sorterte data før vi bruker
 		// linearsøking i sortert tabell og binærsøking.
 		/* Sorterer tabellen */
-		SoekingOgSortering.utvalgSortering(vennerS);
+		SorteringOgSoeking.utvalgSortering(vennerS);
 
 		// Utskrift av data
-		System.out.println("\n sorterete  data ");
+		System.out.println("\n Sorterete  data ");
 		for (int i = 0; i < vennerS.length; i++) {
 			System.out.println(vennerS[i]);
 		}
@@ -102,7 +102,7 @@ public class KlientTelefonliste {
 		 */
 		System.out.println("\nUtskrift fra linearSokSortert som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.linearSoekS(vennerS, 0, vennerS.length - 1, kontakt1);
+		funnet = SorteringOgSoeking.linearSoekS(vennerS, 0, vennerS.length - 1, kontakt1);
 
 		if (funnet) {
 			System.out.print(kontakt1);
@@ -112,7 +112,7 @@ public class KlientTelefonliste {
 			System.out.println(" er ikke med");
 		}
 
-		funnet = SoekingOgSortering.linearSoekS(vennerS, 0, vennerS.length - 1, kontakt2);
+		funnet = SorteringOgSoeking.linearSoekS(vennerS, 0, vennerS.length - 1, kontakt2);
 
 		if (funnet) {
 			System.out.print(kontakt2);
@@ -127,7 +127,7 @@ public class KlientTelefonliste {
 		/* Binærsøking som returnerer sann eller usann */
 		System.out.println("\nUtskrift fra rekursiv binaersoking som returnerer sann eller usann ");
 
-		funnet = SoekingOgSortering.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt1);
+		funnet = SorteringOgSoeking.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt1);
 
 		if (funnet) {
 			System.out.print(kontakt1);
@@ -137,7 +137,7 @@ public class KlientTelefonliste {
 			System.out.println(" er ikke med");
 		}
 
-		funnet = SoekingOgSortering.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt2);
+		funnet = SorteringOgSoeking.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt2);
 
 		if (funnet) {
 			System.out.print(kontakt2);
@@ -147,31 +147,33 @@ public class KlientTelefonliste {
 			System.out.println(" er ikke med");
 		}
 
-		/* Rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */
+		/* Rekursiv binærsøking som returnerer true ved funn ellers false */
 		System.out.println("\nUtskrift fra ikke rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
 
-		funnet = SoekingOgSortering.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt1);
+		funnet = SorteringOgSoeking.binaerSoek(vennerS, 0, vennerS.length - 1, kontakt1);
 
 		if (funnet) {
-			System.out.println(kontakt1);
+			System.out.print(kontakt1);
 			System.out.println(" er med");
 		} else {
-			System.out.println(kontakt1);
+			System.out.print(kontakt1);
 			System.out.println(" er ikke med");
 		}
 
-		funnet = SoekingOgSortering.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt2);
+		funnet = SorteringOgSoeking.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt2);
 
 		if (funnet) {
-			System.out.println(" er med");
+			System.out.print(kontakt2);
+			System.out.print(" er med");
 		} else {
+			System.out.print(kontakt2);
 			System.out.println(" er ikke med");
 		}
 
-		/* Ikke rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */
+		/* Rekursiv binærsøking som returnerer true ved funn ellers false */
 		System.out.println("\nUtskrift fra rekursiv binaersoking som returnerer indeksen, -1 ved ikke-funn.");
 
-		funnet = SoekingOgSortering.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt1);
+		funnet = SorteringOgSoeking.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt1);
 
 		if (funnet) {
 			System.out.print(kontakt1);
@@ -181,7 +183,7 @@ public class KlientTelefonliste {
 			System.out.println(" er ikke med");
 		}
 
-		funnet = SoekingOgSortering.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt2);
+		funnet = SorteringOgSoeking.binaerSoek2(vennerS, 0, vennerS.length - 1, kontakt2);
 
 		if (funnet) {
 			System.out.print(kontakt2);
@@ -190,12 +192,16 @@ public class KlientTelefonliste {
 			System.out.print(kontakt2);
 			System.out.println(" er ikke med");
 		}
+		
+		/* TODO
+		 *  Rekursiv binærsøk som returnerer indeks 
+		 */
 
 		/* Sortering av usorterte tabeller , venner1, venner2, venner3 */
 
 		/* Sortering ved utvalg */
 		System.out.println("\nUtvalgsortering");
-		SoekingOgSortering.utvalgSortering(venner1);
+		SorteringOgSoeking.utvalgSortering(venner1);
 
 		for (int indeks = 0; indeks < venner1.length; indeks++) {
 			System.out.println(venner1[indeks]);
@@ -213,7 +219,7 @@ public class KlientTelefonliste {
 
 		/* Boblesortering */
 		System.out.println("\nBoblesortering");
-		SoekingOgSortering.bobleSort(venner3);
+		SorteringOgSoeking.bobleSort(venner3);
 
 		for (int indeks = 0; indeks < venner3.length; indeks++) {
 			System.out.println(venner3[indeks]);
@@ -224,8 +230,8 @@ public class KlientTelefonliste {
 		 * System.out.println("\nBoblesortering med flagg");
 		 * SoekingOgSortering.bobleSortFlagg(venner6);
 		 * 
-		 * for (int indeks = 0; indeks < venner3.length; indeks++) {
-		 * System.out.println(venner3[indeks]); }
+		 * for (int indeks = 0; indeks < venner6.length; indeks++) {
+		 * System.out.println(venner6[indeks]); }
 		 */
 
 		/*

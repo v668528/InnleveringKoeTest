@@ -1,6 +1,6 @@
 package no.hvl.dat102;
 
-public class SoekingOgSortering {
+public class SorteringOgSoeking {
 
 	/*************************************************************************************************/
 	// Søkealgoritmer
