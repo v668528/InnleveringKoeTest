@@ -14,14 +14,14 @@ public class KlientTelefonliste {
 		venner[6] = new Kontakt("Elise", "Alstad", "53425699");
 		/**************************************************/
 		Kontakt[] vennerS = new Kontakt[7];
-		for (int i = 0; i <= vennerS.length - 1; i++) {
+		for (int i = 0; i < vennerS.length; i++) {
 			vennerS[i] = venner[i];
 		}
 
 		// Lager noen flere usorterte data for de ulike sorterinsgmetodene
 
 		Kontakt[] venner1 = new Kontakt[7];
-		for (int i = 0; i <= venner1.length - 1; i++) {
+		for (int i = 0; i < venner1.length; i++) {
 			venner1[i] = venner[i];
 		}
 
@@ -31,7 +31,7 @@ public class KlientTelefonliste {
 		}
 
 		Kontakt[] venner3 = new Kontakt[7];
-		for (int i = 0; i <= venner3.length - 1; i++) {
+		for (int i = 0; i < venner3.length; i++) {
 			venner3[i] = venner[i];
 		}
 		Kontakt[] venner4 = new Kontakt[7];
@@ -40,12 +40,12 @@ public class KlientTelefonliste {
 		}
 
 		Kontakt[] venner5 = new Kontakt[7];
-		for (int i = 0; i <= venner5.length - 1; i++) {
+		for (int i = 0; i < venner5.length ; i++) {
 			venner5[i] = venner[i];
 		}
 
 		Kontakt[] venner6 = new Kontakt[7];
-		for (int i = 0; i <= venner6.length - 1; i++) {
+		for (int i = 0; i < venner6.length; i++) {
 			venner6[i] = venner[i];
 		}
 
