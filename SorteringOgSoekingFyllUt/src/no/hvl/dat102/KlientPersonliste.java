@@ -1,4 +1,4 @@
-package no.hib.dat102;
+package no.hvl.dat102;
 
 public class KlientPersonliste {
 
@@ -114,14 +114,7 @@ public class KlientPersonliste {
 		} else {
 			System.out.println(person1 + " er ikke med");
 		}
-		
-		funnet = SoekingOgSortering.binaerSoek2(personerS, 0, personerS.length - 1, person2);
-		
-		if (funnet) {
-			System.out.println(person2 + " er med");
-		} else {
-			System.out.println(person2 + " er ikke med");
-		}
+				
 
 		// Alt 3
 		/* Rekursiv binærsøking som returnerer indeksen, -1 ved ikke-funn */

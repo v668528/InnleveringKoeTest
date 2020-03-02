@@ -1,4 +1,4 @@
-package no.hib.dat102;
+package no.hvl.dat102;
 
 public class SoekingOgSortering {
 
@@ -174,4 +174,32 @@ public class SoekingOgSortering {
 	 *            er data som skal sorteres
 	 */
 	// ...
+	/**
+	 * 
+	 * @param <T> generisk type
+	 * @param data er tabellen som skal sorteres
+	 */
+	public static <T extends Comparable<T>> void bobleSort(T[] data) {
+		T temp;
+		for (int p = data.length - 1; p >= 0; p--) {
+			for (int sok = 0; sok <= p - 1; sok++) {
+				if (data[sok].compareTo(data[sok + 1]) > 0) {
+					/* Bytt verdiene */
+					temp = data[sok];
+					data[sok] = data[sok + 1];
+					data[sok + 1] = temp;
+				}
+			} // indre løkke
+		} // ytre løkke
+
+	}// metode
+	
+	public static <T extends Comparable<T>> void bobleSortFlagg(T[] data) {
+		/*
+		 * Sjekker om det ha vært ombytinger i nåværende gjennomløp. Dersom ingen
+		 *  ombyttinger avbrytes søket
+		 */
+		//TODO
+	}// metode
+
 }
