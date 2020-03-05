@@ -1,7 +1,7 @@
 package no.hvl.dat102.kjedet;
 
-import no.hvl.dat102.EmptyCollectionException;
-import no.hvl.dat102.adt.*;
+import no.hvl.dat102.adt.OrdnetListeADT;
+import no.hvl.dat102.exceptions.EmptyCollectionException;
 
 /**
  * 

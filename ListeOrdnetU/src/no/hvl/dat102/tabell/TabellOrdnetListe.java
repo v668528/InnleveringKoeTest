@@ -1,7 +1,7 @@
 package no.hvl.dat102.tabell;
 
-import no.hvl.dat102.EmptyCollectionException;
 import no.hvl.dat102.adt.OrdnetListeADT;
+import no.hvl.dat102.exceptions.EmptyCollectionException;
 
 public class TabellOrdnetListe<T extends Comparable<T>> implements OrdnetListeADT<T> {
 
