@@ -8,8 +8,8 @@ public class Balansering {
 	// SirkulaerStabel<Parentesinfo>stabel = new
 	// SirkulaerStabel<Parentesinfo>();
 
-	private boolean passer(char åpent, char lukket) {
-		switch (åpent) {
+	private boolean passer(char aapent, char lukket) {
+		switch (aapent) {
 		case '(':
 			return (lukket == ')');
 		case '[':
