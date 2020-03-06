@@ -182,12 +182,28 @@ public class SorteringOgSoeking {
 
 	}// metode
 
-	public static <T extends Comparable<T>> void bobleSortFlagg(T[] data) {
-		/*
-		 * Sjekker om det ha vært ombytinger i nåværende gjennomløp. Dersom ingen
-		 * ombyttinger avbrytes søket
-		 */
-		// TODO
-	}// metode
+	/*
+		public static <T extends Comparable<T>> void bobleSortFlagg(T[] data) {
+			
+			 //* Sjekker om det ha vært ombyttinger i nåværende gjennomløp. Dersom ingen
+			// * ombyttinger så avbrytes prosessen.
+			 
+			T temp = null;
+			int fase = 1;
+			boolean byttet = false;
+			do {
+				byttet = false;
+				for (?) {
+					if (?) {
+						//...
+					}
 
-}
+				} // indre løkke
+				fase++;
+
+			} while (byttet); // ytre løkke
+
+		}// metode	
+	*/
+
+}//class
