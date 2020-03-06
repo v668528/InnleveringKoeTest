@@ -225,14 +225,14 @@ public class KlientTelefonliste {
 			System.out.println(venner3[indeks]);
 		}
 
-		/*
-		 * TODO Boblesortering med flagg
-		 * System.out.println("\nBoblesortering med flagg");
-		 * SoekingOgSortering.bobleSortFlagg(venner6);
-		 * 
-		 * for (int indeks = 0; indeks < venner6.length; indeks++) {
-		 * System.out.println(venner6[indeks]); }
-		 */
+		
+		
+		  System.out.println("\nBoblesortering med flagg");
+		  SorteringOgSoeking.bobleSortFlagg(venner6);
+		  
+		 for (int indeks = 0; indeks < venner6.length; indeks++) {
+		  System.out.println(venner6[indeks]); }
+		 
 
 		/*
 		 * TODO Kvikksortering System.out.println("\nKvikksortering");
