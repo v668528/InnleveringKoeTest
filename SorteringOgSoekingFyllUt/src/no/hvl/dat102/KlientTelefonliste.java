@@ -88,7 +88,7 @@ public class KlientTelefonliste {
 		// OBS! Lager først en tabell av sorterte data før vi bruker
 		// linearsøking i sortert tabell og binærsøking.
 		/* Sorterer tabellen */
-		SorteringOgSoeking.utvalgSortering(vennerS);
+		SorteringOgSoeking.utvalgsSortering(vennerS);
 
 		// Utskrift av data
 		System.out.println("\n Sorterete  data ");
@@ -201,7 +201,7 @@ public class KlientTelefonliste {
 
 		/* Sortering ved utvalg */
 		System.out.println("\nUtvalgsortering");
-		SorteringOgSoeking.utvalgSortering(venner1);
+		SorteringOgSoeking.utvalgsSortering(venner1);
 
 		for (int indeks = 0; indeks < venner1.length; indeks++) {
 			System.out.println(venner1[indeks]);
