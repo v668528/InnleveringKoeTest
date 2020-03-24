@@ -1,11 +1,15 @@
 package no.hvl.dat102;
 
+import java.util.Iterator;
+
+import no.hvl.dat102.adt.BSTreADT;
+
 //********************************************************************
 // KjedetBinærSøkeTre.java        
 //
 //********************************************************************
 
-public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
+public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterable<T> {
 
 	private int antall;
 	private BinaerTreNode<T> rot;
@@ -50,7 +54,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	}
 
 	private BinaerTreNode<T> leggTilRek(BinaerTreNode<T> p, T element) {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}
 
@@ -60,14 +64,14 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	 ******************************************************************/
 
 	public void leggTil2(T element) {
-		// TODO Blir skriven i forelesing
+		// 
 	}
 
 	/******************************************************************
 	 * Fjerner noden med minste verdi fra dette binære søketreet.
 	 *********************************************************************/
 	public T fjernMin() {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}//
 
@@ -75,7 +79,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	 * Fjerner noden med største verdi fra dette binære søketreet.
 	 ******************************************************************/
 	public T fjernMaks() {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}//
 
@@ -83,7 +87,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	 * Returnerer det minste elementet i dette binære søketreet.
 	 ******************************************************************/
 	public T finnMin() {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}//
 
@@ -91,7 +95,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 	 * Returnerer det største elementet i dette binære søketreet.
 	 ******************************************************************/
 	public T finnMaks() {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}//
 
@@ -108,14 +112,14 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 
 	// Den rekursive hjelpemetoden for søking
 	
-	// TODO Blir skriven i forelesing
+	// TODO 
 
 	/************************************************************************
 	 * Returnerer en referanse til det spesifiserte elementet hvis det fins i dette
 	 * BS-treet, null ellers. Uten bruk av rekursjon. /
 	 ************************************************************************/
 	public T finn2(T element) {
-		// TODO Blir skriven i forelesing
+		// TODO 
 		return null;
 	}
 
@@ -129,6 +133,12 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T> {
 			visInorden(p.getVenstre());
 			System.out.print(" " + p.getElement());
 			visInorden(p.getHoyre());
-		}  // else bass: gjer ingenting
+		}  
+	}
+
+	@Override
+	public Iterator<T> iterator() {
+		return new InordenIterator<T>(rot);
+		
 	}
 }// class
