@@ -1,5 +1,7 @@
 package no.hvl.dat102;
 
+
+
 import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
@@ -11,7 +13,7 @@ import org.junit.jupiter.api.Test;
 public class TestSortering {
 
 	private static final int SIZE = 1000;
-	private static Integer[] elementer;
+	private  static Integer[] elementer ;
 	private Integer[] kopier = new Integer[SIZE];
 
 	@BeforeAll
@@ -31,13 +33,13 @@ public class TestSortering {
 	}
 
 	@Test
-	public final void testutValgssortering() {
+	public void testutValgssortering() {
 		SorteringOgSoeking.utvalgsSortering(kopier);
 		boolean ok = verifiser(kopier);
 		assertTrue(ok);
 	}
 
-	private static <T extends Comparable<T>> boolean verifiser(T[] data) {
+	private  static <T extends Comparable<T>> boolean verifiser(T[] data) {
 		boolean sortert = true;
 		for (int i = 0; i < data.length - 1 && sortert; i++) {
 			sortert = data[i].compareTo(data[i + 1]) <= 0;

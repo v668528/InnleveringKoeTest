@@ -26,7 +26,7 @@ public class Kjoereplan1{
         System.out.println("Datafil: " + filnavn);
         
         js.lesFraFil(filnavn);
-        antall = js.hentAntall();
+        antall = js.getAntall();
         
         System.out.println("antall " + antall);
         JobbSamling ferdige = new JobbSamling(antall);

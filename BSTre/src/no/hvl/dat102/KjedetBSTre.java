@@ -2,8 +2,6 @@ package no.hvl.dat102;
 
 import java.util.Iterator;
 
-import no.hvl.dat102.adt.BSTreADT;
-
 //********************************************************************
 // KjedetBinærSøkeTre.java        
 //
@@ -12,6 +10,20 @@ import no.hvl.dat102.adt.BSTreADT;
 public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterable<T> {
 
 	private int antall;
+	/**
+	 * @return the rot
+	 */
+	public BinaerTreNode<T> getRot() {
+		return rot;
+	}
+
+	/**
+	 * @param rot the rot to set
+	 */
+	public void setRot(BinaerTreNode<T> rot) {
+		this.rot = rot;
+	}
+
 	private BinaerTreNode<T> rot;
 
 	/******************************************************************
@@ -33,6 +45,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/*****************************************************************
 	 * Returnerer sann hvis dette binære trett er tomt og usann ellers.
 	 *****************************************************************/
+	@Override
 	public int antall() {
 		return antall;
 	}
@@ -40,14 +53,17 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/*****************************************************************
 	 * Returnerer sann hvis dette binære treet er tom og usann ellers.
 	 *****************************************************************/
+	@Override
 	public boolean erTom() {
 		return (antall == 0);
 	}
-
+	
+	
 	/**********************************************************************
 	 * Legger det spesifiserte elementet på passende plass i BS-treet. Like
 	 * elementer blir lagt til høyre. Bruk av rekursiv hjelpemetode.
 	 ********************************************************************/
+	@Override
 	public void leggTil(T element) {
 		rot = leggTilRek(rot, element);
 		antall++;
@@ -70,6 +86,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/******************************************************************
 	 * Fjerner noden med minste verdi fra dette binære søketreet.
 	 *********************************************************************/
+	@Override
 	public T fjernMin() {
 		// TODO 
 		return null;
@@ -78,6 +95,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/******************************************************************
 	 * Fjerner noden med største verdi fra dette binære søketreet.
 	 ******************************************************************/
+	@Override
 	public T fjernMaks() {
 		// TODO 
 		return null;
@@ -86,6 +104,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/******************************************************************
 	 * Returnerer det minste elementet i dette binære søketreet.
 	 ******************************************************************/
+	@Override
 	public T finnMin() {
 		// TODO 
 		return null;
@@ -94,6 +113,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	/******************************************************************
 	 * Returnerer det største elementet i dette binære søketreet.
 	 ******************************************************************/
+	@Override
 	public T finnMaks() {
 		// TODO 
 		return null;
@@ -103,6 +123,7 @@ public class KjedetBSTre<T extends Comparable<T>> implements BSTreADT<T>,Iterabl
 	 * Returnerer en referanse til det spesifiserte elementet hvis det finst i dette
 	 * BS-treet, null ellers. Bruk av rekursjon /
 	 ******************************************************************************/
+	@Override
 	public T finn(T element) {
 		// Søk med rekursiv hjelpemetode
 

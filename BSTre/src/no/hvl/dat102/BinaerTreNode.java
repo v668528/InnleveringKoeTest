@@ -13,13 +13,13 @@ public class BinaerTreNode<T> {
 	/*****************************************************************
 	 * Oppretter et nytt tre med spesifisert data.
 	 *****************************************************************/
-	BinaerTreNode(T el) {
+	public BinaerTreNode(T el) {
 		element = el;
 		venstre = null;
 		hoyre = null;
 	}
 
-	BinaerTreNode(T element, BinaerTreNode<T> venstre, BinaerTreNode<T> hoyre) {
+	public BinaerTreNode(T element, BinaerTreNode<T> venstre, BinaerTreNode<T> hoyre) {
 		this.element = element;
 		this.venstre = venstre;
 		this.hoyre = hoyre;
