@@ -11,6 +11,7 @@ package no.hvl.dat102;
 			for (Arbeidsdag dag : Arbeidsdag.values()) {
 				if (dag.toString().equals(navn.toUpperCase())) {
 					adag = dag;
+					
 					break;
 				}
 			}
