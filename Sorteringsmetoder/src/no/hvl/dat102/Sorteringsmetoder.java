@@ -6,6 +6,7 @@ public class Sorteringsmetoder {
 	 * 
 	 * 
 	 * @param data er data som skal sorteres
+	 * 
 	 */
 	
 	public static <T extends Comparable<T>> void utvalgsSortering(T[] data) {
