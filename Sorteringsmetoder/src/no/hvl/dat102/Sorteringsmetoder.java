@@ -4,6 +4,7 @@ public class Sorteringsmetoder {
 	/**
 	 * Utvalgssortering
 	 * 
+	 * 
 	 * @param data er data som skal sorteres
 	 */
 	
