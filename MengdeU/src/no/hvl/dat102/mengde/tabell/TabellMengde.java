@@ -1,10 +1,11 @@
 package no.hvl.dat102.mengde.tabell;
 
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
 import no.hvl.dat102.exception.EmptyCollectionException;
-import no.hvl.dat102.mengde.adt.*;
+import no.hvl.dat102.mengde.adt.MengdeADT;
 
 public class TabellMengde<T> implements MengdeADT<T> {
 	// ADT-en Mengde implementert som tabell
@@ -61,6 +62,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		int indeks = tilf.nextInt(antall);
 		svar = tab[indeks];
 		tab[indeks] = tab[antall - 1];
+		tab[antall-1]= null;
 		antall--;
 
 		return svar;
@@ -68,6 +70,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public T fjern(T element) {
+		//TODO
 		// Søker etter og fjerner element. Returnerer null-ref ved ikke-funn
 
 		if (erTom())
@@ -75,9 +78,16 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
 		boolean funnet = false;
 		T svar = null;
-		/*
-		 * Fyll ut
-		 */
+		for(int i = 0; (i < antall && !funnet);i++) {
+			if(tab[i].equals(element)) {
+				svar = tab[i];
+				tab[i] = tab[antall-1];
+				//tab[antall-1] = null;
+				antall--;
+				funnet = true;
+				
+			}
+		}
 		return svar;
 	}
 
@@ -91,14 +101,29 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		}
 		return (funnet);
 	}
+	
+	/*
+	 * Når vi overkjører (override) equals- meteoden er det anbefalt at vi også
+	 * overkjører hascode-metoden da en del biblioterker burker hascode sammen med
+	 * equals. Vi kommer tilbake til forklaring og bruk av hascode senere i faget.
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + antall;
+		result = prime * result + Arrays.deepHashCode(tab);
+		return result;
+	}
 
 	@Override
 	public boolean equals(Object m2) {
+		//TODO
 		boolean likeMengder = true;
 		T element;
 
 		/*
-		 * Fyll ut
+		 * ...
 		 */
 		return likeMengder;
 	}
@@ -111,7 +136,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	}
 
 	/*
-	 * Denne versjonen av unionen er lite effekktiv
+	 * Denne versjonen av unionen er lite effektiv
 	 * 
 	 * @Override public MengdeADT<T> union(MengdeADT<T> m2) { TabellMengde<T> begge
 	 * = new TabellMengde<T>(); for (int i = 0; i < antall; i++) {
@@ -123,10 +148,11 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 
 	public MengdeADT<T> union(MengdeADT<T> m2) {
+		//TODO
 		MengdeADT<T> begge = new TabellMengde<T>();
 		T element = null;
 		/*
-		 * Fyll ut
+		 * ...
 		 * 
 		 */
 		return begge;
@@ -137,13 +163,14 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		MengdeADT<T> snittM = new TabellMengde<T>();
 		T element = null;
 		/*
-		 * Fyll ut
+		 * ...
 		 */
 		return snittM;
 	}
 
 	@Override
 	public MengdeADT<T> differens(MengdeADT<T> m2) {
+		//TODO
 		MengdeADT<T> differensM = new TabellMengde<T>();
 		T element;
 		/*
@@ -157,8 +184,9 @@ public class TabellMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
+		//TODO
 		boolean erUnderMengde = true;
-		// Fyll ut
+		// ...
 		return false;
 	}
 

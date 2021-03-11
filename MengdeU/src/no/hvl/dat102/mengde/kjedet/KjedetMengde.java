@@ -3,10 +3,11 @@ package no.hvl.dat102.mengde.kjedet;
 //********************************************************************
 // Kjedet implementasjon av en mengde. 
 //********************************************************************
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 import no.hvl.dat102.exception.EmptyCollectionException;
-import no.hvl.dat102.mengde.adt.*;
+import no.hvl.dat102.mengde.adt.MengdeADT;
 
 public class KjedetMengde<T> implements MengdeADT<T> {
 	private static Random rand = new Random();
@@ -75,11 +76,28 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		boolean funnet = false;
 		LinearNode<T> forgjenger, aktuell;
 		T resultat = null;
-		/*
-		 * Fyll ut
-		 * 
-		 */
+		if (start.getElement().equals(element)) {// Sletter foran
+			resultat = start.getElement();
+			start = start.getNeste();
+			antall--;
+		} else {// Gjennomgår den kjedete strukturen
+			forgjenger = start;
+			aktuell = start.getNeste();
+			for (int sok = 2; sok <= antall && !funnet; sok++) {
+				if (aktuell.getElement().equals(element))
+					funnet = true;
+				else {
+					forgjenger = aktuell.getNeste();
+				}
+			}
+			if (funnet) {
+				resultat = aktuell.getElement();
+				forgjenger.setNeste(aktuell.getNeste()); // Slette midt inni/bak
+				antall--;
+			}
+		}
 		return resultat;
+
 	}//
 
 	@Override
@@ -95,13 +113,50 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		}
 		return funnet;
 	}
+	/*
+	 * Når vi overkjører (ovverride) equals- meteoden er det anbefalt at vi også
+	 * overkjører hashcode-metoden da en del biblioteker bruker hascode sammen med
+	 * equals. Vi kommer tilbake til forklaring og bruk av hashcode senere i faget.
+	 */
 
 	@Override
-	public boolean equals(Object m2) {
-		boolean likeMengder = true;
-		T element = null;
-		// ...Fyll ut
-		return likeMengder;
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + antall;
+		result = prime * result + ((start == null) ? 0 : start.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object ny) {
+		// TODO
+		if (this == ny) {
+			return true;
+		}
+		if (ny == null) {
+			return false;
+		}
+		if (getClass() != ny.getClass()) {
+			return false;
+		} 
+			boolean likeMengder = true;
+			MengdeADT<T> m2 = (KjedetMengde<T>) ny;
+			if (this.antall != m2.antall()) {
+				likeMengder = false;
+			} else {
+				likeMengder = true;
+				Iterator<T> teller = m2.oppramser();
+				while (teller.hasNext() && likeMengder) {
+					T element = teller.next();
+					if (!this.inneholder(element)) {
+						likeMengder = false;
+					}
+				}
+				return likeMengder;
+			}
+		
+		return false;
 	}
 
 	@Override
@@ -116,31 +171,43 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public MengdeADT<T> union(MengdeADT<T> m2) {
+		// TODO
 		MengdeADT<T> begge = new KjedetMengde<T>();
 		LinearNode<T> aktuell = start;
 		T element = null;
 
-		/*
-		 * Fyll ut
-		 */
+		while (aktuell != null) {// ubetinget innsetting
+			((KjedetMengde<T>) begge).settInn(aktuell.getElement());
+			aktuell = aktuell.getNeste();
+		}
+
+		Iterator<T> teller = m2.oppramser();
+		while (teller.hasNext()) {
+			element = teller.next();
+			if (!this.inneholder(element)) {// tester mot "konstant" mengde
+				((KjedetMengde<T>) begge).settInn(element);
+			}
+		}
+
 		return begge;
 	}//
 
 	@Override
 	public MengdeADT<T> snitt(MengdeADT<T> m2) {
+		// TODO
 		MengdeADT<T> snittM = new KjedetMengde<T>();
 		T element;
 		/*
-		 * Fyll ut...
+		 * ..
 		 * 
-		 * if (this.inneholder(element))
-		 *         ((KjedetMengde<T>) snittM).settInn(element);
+		 * if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
 		 */
 		return snittM;
 	}
 
 	@Override
 	public MengdeADT<T> differens(MengdeADT<T> m2) {
+		// TODO
 		MengdeADT<T> differensM = new KjedetMengde<T>();
 		T element;
 		/*
@@ -153,8 +220,9 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public boolean undermengde(MengdeADT<T> m2) {
+		// TODO
 		boolean erUnderMengde = true;
-		// Fyll ut
+		// ...
 		return erUnderMengde;
 	}
 
