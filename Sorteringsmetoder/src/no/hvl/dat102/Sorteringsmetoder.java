@@ -18,6 +18,7 @@ public class Sorteringsmetoder {
 
 			// byte om
 			T tmp = data[i];
+			
 			data[i] = data[minstePos];
 			
 			data[minstePos] = tmp;
