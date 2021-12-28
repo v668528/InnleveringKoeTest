@@ -2,16 +2,16 @@ package no.hvl.dat102;
 
 public class ParforholdKlient {  
 public static void main(String[] args) {
-    Par<String> strPar = new Par<String>("Ole", "Kari");   
-    Par<Integer> intPar = new Par<Integer>(2019, 2020);
+    Par<String> strPar = new Par<>("Ole", "Kari");   
+    Par<Integer> intPar = new Par<>(2021, 2022);
     
     System.out.println(strPar);
     String maksStreng = strPar.maks();
-    System.out.printf("største %s%n",maksStreng);        
+    System.out.printf("stoerste %s%n",maksStreng);        
     //--------------------------------------
     System.out.println(intPar);
     int maksHeltall = intPar.maks();
-    System.out.printf("største %d%n",maksHeltall);      
+    System.out.printf("stoerste %d%n",maksHeltall);      
   }
 }
 
