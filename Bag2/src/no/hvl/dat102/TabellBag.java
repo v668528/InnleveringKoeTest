@@ -1,4 +1,4 @@
-package no.hvl.dat102.tabell;
+package no.hvl.dat102;
 
 import no.hvl.dat102.adt.BagADT;
 import no.hvl.dat102.exceptions.EmptyCollectionException;
