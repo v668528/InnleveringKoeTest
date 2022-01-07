@@ -1,8 +1,7 @@
 package no.hvl.dat102;
+import no.hvl.dat102.adt.ParADT;
 
-import no.hvl.dat102.adt.ParForhold;
-
-public class Par<T extends Comparable<T>> implements ParForhold<T> {
+public class Par<T extends Comparable<T>> implements ParADT<T> {
 	private T foerste;
 	private T andre;
 
@@ -39,7 +38,6 @@ public class Par<T extends Comparable<T>> implements ParForhold<T> {
 		andre = temp;
 	}
 
-	
 	public String toString() {
 		return "(" + foerste + "," + andre + ")";
 	}
@@ -51,8 +49,6 @@ public class Par<T extends Comparable<T>> implements ParForhold<T> {
 		} else {
 			return andre;
 		}
-		
+
 	} // metode
-	
-	
 }// class

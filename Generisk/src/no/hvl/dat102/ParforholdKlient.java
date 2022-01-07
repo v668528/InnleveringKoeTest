@@ -1,9 +1,11 @@
 package no.hvl.dat102;
 
+import no.hvl.dat102.adt.ParADT;
+
 public class ParforholdKlient {  
 public static void main(String[] args) {
-    Par<String> strPar = new Par<>("Ole", "Kari");   
-    Par<Integer> intPar = new Par<>(2021, 2022);
+    ParADT<String> strPar = new Par<>("Ole", "Kari");   
+    ParADT<Integer> intPar = new Par<>(2021, 2022);
     
     System.out.println(strPar);
     String maksStreng = strPar.maks();
