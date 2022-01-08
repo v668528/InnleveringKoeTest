@@ -15,7 +15,7 @@ public class TabellBag<T> implements BagADT<T> {
 
 	public TabellBag(int start) {
 		antall = 0;
-		bag = (T[])(new Object[start]);
+		bag = (T[]) (new Object[start]);
 	}
 
 	/**
@@ -25,7 +25,6 @@ public class TabellBag<T> implements BagADT<T> {
 		return antall;
 	}
 
-	
 	/**
 	 * @return returnerer tabellen
 	 */
@@ -40,8 +39,6 @@ public class TabellBag<T> implements BagADT<T> {
 		this.bag = bag;
 	}
 
-	
-	/*
 	public void leggTil(T el) {
 		if (antall == bag.length) {
 			utvidKapasitet();
@@ -49,7 +46,7 @@ public class TabellBag<T> implements BagADT<T> {
 		bag[antall] = el;
 		antall++;
 	}
-*/
+
 	private void utvidKapasitet() {
 		T[] hjelpebag = (T[]) (new Object[2 * bag.length]);
 		for (int i = 0; i < bag.length; i++) {
@@ -92,6 +89,17 @@ public class TabellBag<T> implements BagADT<T> {
 	}
 
 	@Override
+	public void nullstill() {
+		int i = 0;
+		while (!erTom()) {
+			bag[i] = null;
+			antall--;
+			i++;
+		}
+
+	}
+
+	@Override
 	public int antall() {
 		return antall;
 	}
@@ -111,25 +119,20 @@ public class TabellBag<T> implements BagADT<T> {
 		return nyBag;
 
 	}
-	
+
 	public void skriv() {
 		for (int i = 0; i < antall; i++) {
 			System.out.println(bag[i]);
-		
-		}
-	}
-	
-	public void skrivnyBag() {
-		T[]nyBag = tilTabell();
-		for(T el:nyBag) {
-			System.out.println(el);
-			
+
 		}
 	}
 
-	@Override
-	public void leggTil(T el) {
-		// TODO Auto-generated method stub
-		
+	public void skrivnyBag() {
+		T[] nyBag = tilTabell();
+		for (T el : nyBag) {
+			System.out.println(el);
+
+		}
 	}
+
 }
