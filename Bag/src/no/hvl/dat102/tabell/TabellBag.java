@@ -90,13 +90,10 @@ public class TabellBag<T> implements BagADT<T> {
 
 	@Override
 	public void nullstill() {
-		int i = 0;
-		while (!erTom()) {
+		for (int i = 0; i < antall; i++) {
 			bag[i] = null;
-			antall--;
-			i++;
 		}
-
+		antall = 0;
 	}
 
 	@Override
