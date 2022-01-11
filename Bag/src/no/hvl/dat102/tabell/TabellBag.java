@@ -5,7 +5,7 @@ import no.hvl.dat102.exceptions.EmptyCollectionException;
 
 public class TabellBag<T> implements BagADT<T> {
 	private static final int STDK = 100; // Standardkapasitet
-	private static final int IKKE_FUNNET = -1;
+	//private static final int IKKE_FUNNET = -1;
 	private int antall;
 	private T[] bag;
 
