@@ -238,4 +238,10 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		antall++;
 	}
 
+	@Override
+	public Iterator<T> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }// class
