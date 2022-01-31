@@ -9,7 +9,7 @@ import java.util.Random;
 import no.hvl.dat102.exception.EmptyCollectionException;
 import no.hvl.dat102.mengde.adt.MengdeADT;
 
-public class KjedetMengde<T> implements MengdeADT<T>,Iterable<T> {
+public class KjedetMengde<T> implements MengdeADT<T>{
 	private static Random rand = new Random();
 	private int antall; // antall elementer i mengden
 	private LinearNode<T> start;

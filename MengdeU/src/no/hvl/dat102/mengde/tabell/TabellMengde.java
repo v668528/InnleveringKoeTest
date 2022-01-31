@@ -7,7 +7,7 @@ import java.util.Random;
 import no.hvl.dat102.exception.EmptyCollectionException;
 import no.hvl.dat102.mengde.adt.MengdeADT;
 
-public class TabellMengde<T> implements MengdeADT<T>,Iterable<T> {
+public class TabellMengde<T> implements MengdeADT<T> {
 	// ADT-en Mengde implementert som tabell
 	//
 	private final static Random tilf = new Random();
