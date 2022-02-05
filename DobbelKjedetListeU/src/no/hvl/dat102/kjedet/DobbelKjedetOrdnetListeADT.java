@@ -1,4 +1,4 @@
-package no.hvl.dat102.adt;
+package no.hvl.dat102.kjedet;
 
 public interface DobbelKjedetOrdnetListeADT<T> {
  

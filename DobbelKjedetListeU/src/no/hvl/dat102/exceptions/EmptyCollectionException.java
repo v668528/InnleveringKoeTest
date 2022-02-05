@@ -1,4 +1,4 @@
-package no.hvl.dat102.exceptions;
+package DobbelKjedetOrdnet;
 
 //********************************************************************
 //  EmptyCollectionException.java   //
