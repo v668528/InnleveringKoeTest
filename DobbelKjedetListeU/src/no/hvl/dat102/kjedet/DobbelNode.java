@@ -3,7 +3,7 @@ package no.hvl.dat102.kjedet;
 //********************************************************************
 //  DobbelNode.java       
 //
-//  Representer en node i en dobbeltkjedet liste..
+//  Representer en node i en dobbelkjedet liste..
 //********************************************************************
 
 
