@@ -1,10 +1,11 @@
-package no.hib.dat102;
+package no.hvl.dat102.kjedet;
 
 //********************************************************************
 //  DobbelNode.java       
 //
 //  Representer en node i en dobbeltkjedet liste..
 //********************************************************************
+
 
 public class DobbelNode<T>{
     private DobbelNode<T> neste;
