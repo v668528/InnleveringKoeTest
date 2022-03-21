@@ -12,6 +12,7 @@ public class KlientHaug {
 			h1.leggTilElement((tab[i]));
 		}
 
+		
 		System.out.println("Verdiene i tabellen er nå:");
 		h1.skrivTab();
 		// Tar ut av haugen og skriver i sortert rekkefølge
