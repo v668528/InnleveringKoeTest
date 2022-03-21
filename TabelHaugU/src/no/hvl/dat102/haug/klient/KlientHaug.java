@@ -1,4 +1,4 @@
-package no.hvl.dat102.klient;
+package no.hvl.dat102.haug.klient;
 
 import no.hvl.dat102.haug.tabell.*;
 
