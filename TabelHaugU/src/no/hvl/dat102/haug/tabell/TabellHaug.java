@@ -69,6 +69,7 @@ public class TabellHaug<T extends Comparable<T>> {
 				minbarn = hbarn;
 			// Har funnet det "minste" av barna. Sml med forelder
 
+			
 			if ((data[forelder]).compareTo(data[minbarn]) <= 0)
 				ferdig = true;
 			else { // Bytt om og gå videre nedover hvis forelder er for stor
