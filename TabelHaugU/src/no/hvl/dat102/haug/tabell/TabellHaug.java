@@ -56,6 +56,7 @@ public class TabellHaug<T extends Comparable<T>> {
 
 	private void reparerNed() {
 		T hjelp;
+		
 		boolean ferdig = false;
 		int forelder = 0; // Start i roten og sml med neste nivå
 		int minbarn;
