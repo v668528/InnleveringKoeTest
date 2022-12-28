@@ -6,6 +6,7 @@ public interface BagADT<T> {
 
 	/*
 	 * Modifisert noe i forhold til boken
+	 * 
 	 */
 	/**
 	 * Legger til et nytt element.
