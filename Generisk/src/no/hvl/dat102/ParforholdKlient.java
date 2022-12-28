@@ -5,7 +5,7 @@ import no.hvl.dat102.adt.ParADT;
 public class ParforholdKlient {  
 public static void main(String[] args) {
     ParADT<String> strPar = new Par<>("Ole", "Kari");   
-    ParADT<Integer> intPar = new Par<>(2021, 2022);
+    ParADT<Integer> intPar = new Par<>(2022, 2023);
     
     System.out.println(strPar);
     String maksStreng = strPar.maks();
