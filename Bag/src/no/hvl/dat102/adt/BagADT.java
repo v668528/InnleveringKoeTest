@@ -57,7 +57,7 @@ public interface BagADT<T> {
 	/**
 	 * Undersøker om bag'en er tom
 	 * 
-	 * @return Sann hvis bag'en er tom, ellers usann.
+	 * @return sann hvis bag'en er tom, ellers usann.
 	 */
 
 	public boolean erTom();

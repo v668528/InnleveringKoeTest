@@ -16,7 +16,7 @@ public class Person {
 		this.nr = nr;
 	}
 
-	// Overkjøring av equals-metoden
+	
 	/**
 	 * @return navn
 	 */
@@ -25,7 +25,8 @@ public class Person {
 	}
 
 	/**
-	 * @return faar
+	 * 
+	 * @return nr
 	 */
 	public int getNr() {
 		return nr;
@@ -35,6 +36,7 @@ public class Person {
 		return navn + " " + nr;
 	}
 
+	// Overkjøring av equals-metoden
 	@Override
 	public boolean equals(Object andre) {
 		if (this == andre) {
