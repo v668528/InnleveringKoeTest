@@ -9,7 +9,7 @@ public class KlientKjedetBag {
 
 	public static void main(String[] args) {
 
-// Noe enkel og mangelfull testing
+// Noe enkel og mangelfull testing  
 
 		BagADT<Person> bag = new KjedetBag<>();
 		// Legger til personer
