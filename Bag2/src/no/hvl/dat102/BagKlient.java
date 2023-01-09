@@ -10,10 +10,7 @@ public class BagKlient {
 
 	public static void main(String[] args) {
 
-		//List<String> ordliste = new ArrayList<String>();
-		//Forenklet uten String i konstruktør
-		
-	    //List<String> animalLst = new ArrayList<>();  
+		//Alt: List<String> = new ArrayList<>();		
 		List<String> ordliste = new LinkedList<>();
 		for (int i = 0; i < ord.length; i++) {
 			ordliste.add(ord[i]);
@@ -21,7 +18,7 @@ public class BagKlient {
 		System.out.println("Opprinnelig ordliste: " + ordliste);
 
 		// Opprett en liste med ord som skal sladdes
-		// List<String> sladdeteOrd = new ArrayList<>();
+		// Alt: List<String> sladdeteOrd = new ArrayList<>();
 		List<String> sladdeteOrd = new LinkedList<>();
 		sladdeteOrd.add("gøy");
 		sladdeteOrd.add("kult");
