@@ -1,7 +1,7 @@
 package no.hvl.dat102;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Test;
 
@@ -102,16 +102,16 @@ public class KarakterTest {
 		assertEquals('F', Karakter.beregnKarakter(0),"feil karakter");
 	}
 
-	@Test(expected = FeilKarakterException.class)
-	// Forventer at metoden skal kaste unntaket for at testen skal være riktig.
-	public void er101ulovlig() throws FeilKarakterException {
-		Karakter.beregnKarakter(101);
-	}
+	@Test
+    public void er101ulovlig() throws FeilKarakterException {
+            assertThrows(FeilKarakterException.class, () -> Karakter.beregnKarakter(101));
+    }
 
-	// ... Samme her
-	@Test(expected = FeilKarakterException.class)
-	public void erNegativUlovlig() throws FeilKarakterException {
-		Karakter.beregnKarakter(-1);
-	}
+    // ... Samme her
+    @Test
+    public void erNegativUlovlig() throws FeilKarakterException {
+            assertThrows(FeilKarakterException.class, () -> Karakter.beregnKarakter(-1));
+    }
+
 
 }
