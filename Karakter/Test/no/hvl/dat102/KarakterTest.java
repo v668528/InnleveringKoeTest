@@ -1,6 +1,7 @@
 package no.hvl.dat102;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.Test;
 
@@ -13,92 +14,92 @@ public class KarakterTest {
 
 	@Test
 	public void er100enA() throws FeilKarakterException {
-		assertEquals("feil karakter", 'A', Karakter.beregnKarakter(100));
+		assertEquals('A', Karakter.beregnKarakter(100),"feil karakter");
 	}
 
 	@Test
 	public void er95enA() throws FeilKarakterException {
-		assertEquals("feil karakter", 'A', Karakter.beregnKarakter(95));
+		assertEquals('A', Karakter.beregnKarakter(95),"feil karakter");
 	}
 
 	@Test
 	public void er90enA() throws FeilKarakterException {
-		assertEquals("feil karakter", 'A', Karakter.beregnKarakter(90));
+		assertEquals('A', Karakter.beregnKarakter(90),"feil karakter");
 	}
 
 	@Test
 	public void er89enB() throws FeilKarakterException {
-		assertEquals("feil karakter", 'B', Karakter.beregnKarakter(89));
+		assertEquals('B', Karakter.beregnKarakter(89),"feil karakter");
 	}
 
 	@Test
 	public void er82enB() throws FeilKarakterException {
-		assertEquals("feil karakter", 'B', Karakter.beregnKarakter(82));
+		assertEquals('B', Karakter.beregnKarakter(82),"feil karakter");
 	}
 
 	@Test
 	public void er80enB() throws FeilKarakterException {
-		assertEquals("feil karakter", 'B', Karakter.beregnKarakter(80));
+		assertEquals('B', Karakter.beregnKarakter(80),"feil karakter");
 	}
 
 	@Test
 	public void er79enC() throws FeilKarakterException {
-		assertEquals("feil karakter", 'C', Karakter.beregnKarakter(79));
+		assertEquals('C', Karakter.beregnKarakter(79),"feil karakter");
 	}
 
 	@Test
 	public void er66enC() throws FeilKarakterException {
-		assertEquals("feil karakter", 'C', Karakter.beregnKarakter(66));
+		assertEquals('C', Karakter.beregnKarakter(66),"feil karakter");
 	}
 
 	@Test
 	public void er60enC() throws FeilKarakterException {
-		assertEquals("feil karakter", 'C', Karakter.beregnKarakter(60));
+		assertEquals('C', Karakter.beregnKarakter(60),"feil karakter");
 	}
 
 	@Test
 	public void er59enD() throws FeilKarakterException {
-		assertEquals("feil karakter", 'D', Karakter.beregnKarakter(59));
+		assertEquals('D', Karakter.beregnKarakter(59),"feil karakter");
 	}
 
 	@Test
 	public void er54enD() throws FeilKarakterException {
-		assertEquals("feil karakter", 'D', Karakter.beregnKarakter(54));
+		assertEquals('D', Karakter.beregnKarakter(54),"feil karakter");
 	}
 
 	@Test
 	public void er50enD() throws FeilKarakterException {
-		assertEquals("feil karakter", 'D', Karakter.beregnKarakter(50));
+		assertEquals('D', Karakter.beregnKarakter(50),"feil karakter");
 	}
 
 	@Test
 	public void er49enE() throws FeilKarakterException {
-		assertEquals("feil karakter", 'E', Karakter.beregnKarakter(49));
+		assertEquals('E', Karakter.beregnKarakter(49),"feil karakter");
 	}
 
 	@Test
 	public void er45enE() throws FeilKarakterException {
-		assertEquals("feil karakter", 'E', Karakter.beregnKarakter(45));
+		assertEquals('E', Karakter.beregnKarakter(45),"feil karakter");
 	}
 
 	@Test
 	public void er40enE() throws FeilKarakterException {
-		assertEquals("feil karakter", 'E', Karakter.beregnKarakter(40));
+		assertEquals('E', Karakter.beregnKarakter(40),"feil karakter");
 	}
 
 	@Test
 	public void er39enF() throws FeilKarakterException {
-		assertEquals("feil karakter", 'F', Karakter.beregnKarakter(39));
+		assertEquals('F', Karakter.beregnKarakter(39),"feil karakter");
 	}
 
 	@Test
 	public void er37enF() throws FeilKarakterException {
-		assertEquals("feil karakter", 'F', Karakter.beregnKarakter(37));
+		assertEquals('F', Karakter.beregnKarakter(37),"feil karakter");
 	}
 
 	@Test
 	public void er0enF() throws FeilKarakterException {
-		assertEquals("feil karakter", 'F', Karakter.beregnKarakter(0));
+		assertEquals('F', Karakter.beregnKarakter(0),"feil karakter");
 	}
 
 	@Test(expected = FeilKarakterException.class)
